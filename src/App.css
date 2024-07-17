@@ -259,7 +259,7 @@ footer {
   padding: 10px 20px; /* Add horizontal padding */
   position: fixed;
   bottom: 0;
-  left: 0px; /* Ensure it starts from the left edge */
-  right: 0px; /* Ensure it extends to the right edge */
+  left: 0; /* Ensure it starts from the left edge */
+  right: 0; /* Ensure it extends to the right edge */
   box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
 }
