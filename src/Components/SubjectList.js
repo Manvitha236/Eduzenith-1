@@ -169,6 +169,11 @@ const SubjectList = () => {
         </div>
       </header>
       <nav>
+      <div className="hamburger" id="hamburger" onClick={handleHamburgerClick}>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
         <ul id="nav-links">
           <li><a href="/">Home</a></li>
         </ul>
@@ -177,10 +182,11 @@ const SubjectList = () => {
         <div className="introduction">
           <h2>Subjects for Year {year}, Semester {semester}</h2>
         </div>
+        <h3>Theory Subjects</h3>
+
         <div className="branches">
-          <div>
-          <h3>Theory Subjects</h3>
-          </div>
+          
+          
           {theory.map((subject, index) => (
             <div key={index} className="card">
               <div className="card-content">
@@ -189,8 +195,9 @@ const SubjectList = () => {
             </div>
           ))}
         </div>
+        <h3>Lab Subjects</h3>
         <div className="branches">
-          <h3>Lab Subjects</h3>
+          
           {labs.map((lab, index) => (
             <div key={index} className="card">
               <div className="card-content">
