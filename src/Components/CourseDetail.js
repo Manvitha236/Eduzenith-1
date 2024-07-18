@@ -7,6 +7,11 @@ const CourseDetail = () => {
   const navigate = useNavigate();
   const [year, setYear] = useState('');
   const [semester, setSemester] = useState('');
+  const [isNavVisible, setIsNavVisible] = useState(false);
+  const handleHamburgerClick = () => {
+    setIsNavVisible(!isNavVisible);
+  };
+
 
   const handleYearChange = (event) => {
     setYear(event.target.value);
@@ -28,7 +33,12 @@ const CourseDetail = () => {
         </div>
       </header>
       <nav>
-        <ul className="nav-links">
+      <div className="hamburger" id="hamburger" onClick={handleHamburgerClick}>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <ul id="nav-links" className={isNavVisible ? 'show' : ''}>
           <li><a href="/">Home</a></li>
         </ul>
       </nav>

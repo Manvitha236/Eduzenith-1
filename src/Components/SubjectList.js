@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useLocation, useParams } from 'react-router-dom';
 import './styles.css';
 
@@ -160,6 +160,11 @@ const SubjectList = () => {
   const key = `${year}-${semester}`;
   const subjectsForSemester = subjects[courseId][key] || { theory: [], labs: [] };
   const { theory, labs } = subjectsForSemester;
+  const [isNavVisible, setIsNavVisible] = useState(false);
+
+  const handleHamburgerClick = () => {
+    setIsNavVisible(!isNavVisible);
+  };
 
   return (
     <div>
@@ -174,7 +179,7 @@ const SubjectList = () => {
           <div></div>
           <div></div>
         </div>
-        <ul id="nav-links">
+        <ul id="nav-links" className={isNavVisible ? 'show' : ''}>
           <li><a href="/">Home</a></li>
         </ul>
       </nav>
