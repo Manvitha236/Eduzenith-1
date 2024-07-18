@@ -62,23 +62,23 @@ const subjects = {
   EEE: {
     '1-1': {
       theory: ['Differential Equations and Multivariable calculus', 'Engineering Physics', 'Engineering Graphics & Computer Drafting', 'Electrical Technology', 'Introduction to Latest Technical Advancements', 'Programming & Data Structures'],
-      labs: []
+      labs: ['Engineering Physics Lab','Electrical Technology Lab','Programming & Data Structures Lab']
     },
     '1-2': {
       theory: ['Mathematical Methods', 'Digital Logic Design', 'Electronics Devices and Circuits', 'Network Theory', 'Introduction to AI/ML'],
-      labs: []
+      labs: ['Digital Logic Design Lab','English Language Communication Skills Lab-I','Electronics Devices and Circuits Lab']
     },
     '2-1': {
       theory: ['Probability & Random Variables', 'Analog Electronic Circuits', 'Object Oriented Programming', 'Signals & Systems', 'Electrical Machines'],
-      labs: []
+      labs: ['Internet of Things Lab','Analog Electronic Circuits Lab','Object Oriented Programming Lab','Electrical Machines Lab']
     },
     '2-2': {
       theory: ['Power Systems-I', 'Machine Learning', 'Control Systems', 'Linear Integrated Circuits', 'Power Electronics'],
-      labs: []
+      labs: ['Linear Integrated Circuits Lab','Control Systems Lab','Power Electronics Lab']
     },
     '3-1': {
       theory: ['Digital Signal Processing', 'Power Systems-II', 'Electrical Vehicles', 'Embedded Systems', 'Product Design & Innovation'],
-      labs: ['English Language communication skills Lab-II']
+      labs: ['English Language communication skills Lab-II','Embedded Systems Lab','Electrical Vehicles Lab','Power Systems Lab']
     },
     '3-2': {
       theory: [],
@@ -92,23 +92,23 @@ const subjects = {
   ECE: {
     '1-1': {
       theory: ['Differential Equations and Multivariable calculus', 'Engineering Physics', 'Signals and Systems', 'Introduction to Latest Technical Advancements', 'Programming & Data Structures'],
-      labs: []
+      labs: [' Engineering Physics Lab','Electrical Technology Lab','Introduction to Latest Technical Advancements','Programming & Data Structures Lab']
     },
     '1-2': {
       theory: ['Mathematical Methods', 'Object Oriented Programming', 'Electronic Devices and Circuits', 'Network Theory', 'Engineering Graphics and Design'],
-      labs: []
+      labs: ['Object Oriented Programming Lab','Computational Lab','English-Language Communication skills Lab-1','Electronic Devices and Circuits Lab']
     },
     '2-1': {
       theory: ['Probability & Random Variables', 'Analog Electronic Circuits', 'Digital Logic Design', 'Digital Signal Processing', 'Control Systems'],
-      labs: []
+      labs: ['Internet of Things Lab','Analog Electronic Circuits Lab','Digital Logic Design Lab','Digital Signal Processing Lab']
     },
     '2-2': {
       theory: ['Communication Systems-1', 'Digital System Design', 'Linear Integrated Circuits', 'Electromagnetic Waves & Guided Media'],
-      labs: []
+      labs: ['Communication Systems-1 Lab','Digital System Design Lab','Linear Integrated Circuits Lab']
     },
     '3-1': {
       theory: ['Computer Networks', 'Computer Organization & Architecture', 'Communication Systems- 2'],
-      labs: ['English-Language Communication skills Lab-II']
+      labs: ['English-Language Communication skills Lab-II',' Communication Systems Lab-II','Microprocessors,Microcontrollers & Computer Networks Lab','Radio Frequency & Microwave Engg Lab']
     },
     '3-2': {
       theory: ['Product Design & Innovation'],
@@ -177,9 +177,10 @@ const SubjectList = () => {
         <div className="introduction">
           <h2>Subjects for Year {year}, Semester {semester}</h2>
         </div>
-        <h3>Theory Subjects</h3>
         <div className="branches">
-       
+          <div>
+          <h3>Theory Subjects</h3>
+          </div>
           {theory.map((subject, index) => (
             <div key={index} className="card">
               <div className="card-content">
@@ -188,8 +189,8 @@ const SubjectList = () => {
             </div>
           ))}
         </div>
-        <h3>Lab Subjects</h3>
         <div className="branches">
+          <h3>Lab Subjects</h3>
           {labs.map((lab, index) => (
             <div key={index} className="card">
               <div className="card-content">

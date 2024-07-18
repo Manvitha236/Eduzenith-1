@@ -4,28 +4,33 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 body, h1, h2, h3, p, ul, li {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #333;
 }
+
 body {
   background-color: #f4f4f4;
   line-height: 1.6;
   padding: 20px;
   font-size: 16px;
 }
+
 header {
   background-color: #003366;
   padding: 40px 20px;
   text-align: center;
   background-image: linear-gradient(to right, #003366, #005692);
 }
+
 .header-content h1 {
   font-size: 3em;
   color: white;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   animation: text-glow 2s ease-in-out infinite alternate;
 }
+
 @keyframes text-glow {
   from {
       text-shadow: 0 0 5px #fff, 0 0 10px #0077ff;
@@ -34,21 +39,24 @@ header {
       text-shadow: 0 0 10px #fff, 0 0 15px #0077ff;
   }
 }
+
 .header-content p {
   font-size: 1.5em;
   color: #ddd;
   margin-top: 8px;
 }
+
 nav {
   background: #1E56A0;
   background-image: linear-gradient(to right, #163D6F, #1E56A0);
   text-align: center;
-  padding: 20px 0;
+  padding: 20px 0; /* Increased height */
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   margin-top: 10px;
   position: relative;
   width: 100%;
 }
+
 .hamburger {
   display: none;
   font-size: 30px;
@@ -61,17 +69,8 @@ nav {
 }
 
 .hamburger div {
-  width: 25px;
-  height: 3px;
-  position: absolute;
-  left: 20px;
-  top: 50%;
-  transform: translateY(-50%); /* Center vertically */
-}
-
-.hamburger div {
-  width: 25px;
-  height: 3px;
+  width: 35px;
+  height: 5px;
   background-color: white;
   margin: 6px 0;
 }
@@ -84,10 +83,12 @@ nav ul {
   margin: 0;
   width: 100%;
 }
+
 nav ul li {
   list-style-type: none;
   padding: 0 20px;
 }
+
 nav ul li a {
   color: white;
   text-decoration: none;
@@ -97,21 +98,22 @@ nav ul li a {
   border-radius: 5px;
   transition: color 0.3s, background-color 0.3s;
 }
+
 nav ul li a:hover, nav ul li a:focus {
   background-color: rgba(255, 255, 255, 0.2);
   color: #fff;
   outline: none;
 }
-nav ul.show {
-  display: flex !important;
-  flex-direction: column;
-  align-items: flex-start;
-}
+
 main .introduction {
   text-align: center;
   margin-top: 20px;
   padding: 20px;
 }
+.subject-list {
+  margin-top: 10px;
+}
+
 .dropdown-container {
   display: flex;
   justify-content: center;
@@ -123,28 +125,28 @@ main .introduction {
   margin: 0 10px;
   font-size: 1em;
 }
+
 .branches {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
   padding: 20px;
-  margin-bottom: 40px;
+  margin-bottom: 40px; /* Added margin bottom to create space between the last card and the footer */
 }
-.card-link {
-  text-decoration: none;
-  color: inherit;
-}
+
 .card {
   display: flex;
   align-items: center;
   background-color: white;
   border: 1px solid #ccc;
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  margin: 10px;
   padding: 20px;
   border-radius: 10px;
-  width: 100%;
+  width: calc(50% - 20px);
   transition: transform 0.3s, box-shadow 0.3s;
 }
+
 .card img {
   width: 100px;
   height: 100px;
@@ -152,185 +154,98 @@ main .introduction {
   object-fit: cover;
   border-radius: 50%;
 }
+
 .card-content {
   flex-grow: 1;
 }
+
 .card-content h3 {
   margin-top: 0;
   margin-bottom: 10px;
 }
+
 .card-content p {
   margin: 0;
 }
+
 .card:hover {
   transform: scale(1.05);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
-.center-card-container {
-  grid-column: 1 / -1;
-  display: flex;
-  justify-content: center;
-}
-.center-card-container .card-link {
-  width: 50%;
-}
-.course-detail {
-  background-color: #f4f4f4;
-  padding: 20px;
-}
-.course-detail header {
-  background: #1E56A0;
-  background-image: linear-gradient(to right, #163D6F, #1E56A0);
-  text-align: center;
-  padding: 40px 20px;
-  color: white;
-}
-.course-detail header h1 {
-  font-size: 2.5em;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-}
-.course-intro {
-  text-align: center;
-  padding: 40px 20px;
-}
-.course-intro h2 {
-  font-size: 2em;
-  margin-bottom: 10px;
-}
-.course-intro p {
-  font-size: 1.2em;
-  color: #555;
-}
-.dropdown-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 30px;
-}
 
-.dropdown-container select, .dropdown-container button {
-  padding: 10px;
-  margin: 0 10px;
-  font-size: 1em;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  transition: border-color 0.3s;
-}
-.dropdown-container select:focus, .dropdown-container button:focus {
-  border-color: #1E56A0;
-  outline: none;
-}
-.dropdown-container button {
-  background-color: #1E56A0;
-  color: white;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-.dropdown-container button:hover {
-  background-color: #163D6F;
-}
 @media (max-width: 1024px) {
   .header-content h1 {
       font-size: 2.5em;
   }
+
   .header-content p {
       font-size: 1.2em;
   }
+
+  .card {
+      flex-direction: row;
+      width: 100%;
+  }
+
   .card img {
       width: 80px;
       height: 80px;
   }
-  .course-detail header h1 {
-      font-size: 2em;
-  }
-  .course-intro h2 {
-      font-size: 1.5em;
-  }
-  .course-intro p {
-      font-size: 1em;
-  }
 }
+
 @media (max-width: 768px) {
   .header-content h1 {
       font-size: 2em;
   }
+
   .header-content p {
       font-size: 1em;
   }
-  .branches {
-      grid-template-columns: 1fr;
-  }
+
   .card {
       flex-direction: column;
       align-items: center;
   }
+
   .card img {
       width: 100px;
       height: 100px;
       margin-bottom: 10px;
   }
+
   .card-content {
       text-align: center;
   }
-
 
   .hamburger {
       display: block;
   }
 
-nav{padding:20px;}
-
-nav ul {
-  display: none; /* Initially hidden */
-  flex-direction: column; /* Changes to grid in media query if needed */
-  padding: 0; /* Remove padding for full-width blocks */
-  margin: 0;
-  position: absolute;
-  top: 100%; /* Positioned right below the nav bar */
-  left: 0;
-  right:0;
-  width: 100%;
-  background-color: #1E56A0;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25); /* Adds depth with shadow */
-  z-index: 1500; /* Ensures it doesn't overlap the toggle button */
-  border-top: 3px solid #163D6F; /* Adds a top border for style */
-  transition: all 0.3s ease-in-out; /* Smooth transition effect */
-}
-nav ul li {
-  width: 100%; /* Each li takes full width of the ul */
-  list-style-type: none; /* No bullet points */
-}
-nav ul li a {
-  display: block; /* Makes the link fill the li */
-  text-align: center; /* Centers the text */
-  padding: 15px 0; /* Adequate padding for tap targets */
-  color: white; /* Text color */
-  text-decoration: none; /* No underline */
-  background-color: #1A4B7A; /* Slightly different background for contrast */
-  border-bottom: 1px solid #163D6F; /* Borders between items */
-  transition: background-color 0.3s ease-in-out; /* Smooth transition for hover */
-}
-
-nav ul li a:hover {
-  background-color: #163D6F; /* Change background on hover */
-}
+  nav ul {
+      display: none;
+      flex-direction: column;
+      padding: 0;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background-color: #1E56A0;
+  }
 
   nav ul.show {
       display: flex;
   }
-
-
-  .center-card-container .card-link {
-      width: 100%;
-  }
 }
+
 @media (max-width: 480px) {
   header {
       padding: 20px 15px;
   }
+
   .header-content h1 {
       font-size: 1.5em;
   }
+
   .header-content p {
       font-size: 0.9em;
   }
@@ -339,7 +254,6 @@ nav ul li a:hover {
       font-size: 0.8em;
   }
 }
-
 
 footer {
   background-color: #1E56A0;
