@@ -108,7 +108,14 @@ nav ul li a:hover, nav ul li a:focus {
 nav ul.show {
     display: flex !important;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center; /* Center the items horizontally */
+    justify-content: center; /* Center the items vertically */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #1E56A0;
+    padding: 20px 0; /* Add some padding for spacing */
 }
 
 main .introduction {
@@ -120,7 +127,7 @@ main .introduction {
 .dropdown-container {
     display: flex;
     justify-content: center;
-    /* margin-top: 20px; */
+    margin-top: 20px;
 }
 
 .dropdown-container select, .dropdown-container button {
@@ -226,12 +233,13 @@ main .introduction {
 .dropdown-container {
     display: flex;
     justify-content: center;
-    /* margin-top: 30px; */
+    align-items: center;
+    margin-top: 30px;
 }
 
 .dropdown-container select, .dropdown-container button {
     padding: 10px;
-    margin: 10px 10px;
+    margin: 0 10px;
     font-size: 1em;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -314,13 +322,14 @@ main .introduction {
     }
 
     nav ul {
+        display: none;
         flex-direction: column;
-        padding: 0px;
+        padding: 0;
+        position: absolute;
         top: 100%;
         left: 0;
         width: 100%;
         background-color: #1E56A0;
-        background-image: linear-gradient(to right, #163D6F, #1E56A0);
     }
 
     nav ul.show {
@@ -346,13 +355,7 @@ main .introduction {
     }
 
     nav ul li a {
-        font-size: 1em;
-    }
-    .dropdown-container{
-        flex-direction: column;
-    }
-    .dropdown-container button{
-        margin-bottom: 70%;
+        font-size: 0.8em;
     }
 }
 
@@ -365,7 +368,4 @@ footer {
     bottom: 0;
     width: 100%;
     box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
-}
-h3{
-    padding-left: 20px;
 }
