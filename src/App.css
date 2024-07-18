@@ -110,6 +110,9 @@ main .introduction {
   margin-top: 20px;
   padding: 20px;
 }
+.subject-list {
+  margin-top: 10px;
+}
 
 .dropdown-container {
   display: flex;
