@@ -343,12 +343,14 @@ main .introduction {
       transition: all 0.3s ease-in-out; /* Smooth transition effect */
     }
     nav ul li {
+        margin: 0;
       padding: 0;
       top: 0;
       width: 100%; /* Each li takes full width of the ul */
       list-style-type: none; /* No bullet points */
     }
     nav ul li a {
+      margin: 0;
       display: block; /* Makes the link fill the li */
       text-align: center; /* Centers the text */
       padding: 15px 0; /* Adequate padding for tap targets */
@@ -364,6 +366,7 @@ main .introduction {
     }
     nav ul.show {
         display: flex;
+        margin: 0;
     }
 
     .center-card-container .card-link {
