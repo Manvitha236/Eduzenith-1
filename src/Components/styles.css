@@ -367,6 +367,7 @@ main .introduction {
     nav ul.show {
         display: flex;
         margin: 0;
+        padding: 0;
     }
 
     .center-card-container .card-link {
