@@ -391,6 +391,16 @@ main .introduction {
     nav ul li a {
         font-size: 0.8em;
     }
+    .dropdown-container{
+        flex-direction: column;
+    }
+    .dropdown-container select{
+        margin:10px;
+    }
+    .dropdown-container button{
+        margin-bottom: 40%;
+        margin-top: 20px;
+    }
 }
 
 footer {
