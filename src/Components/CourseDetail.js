@@ -22,7 +22,19 @@ const CourseDetail = () => {
   };
 
   const handleViewSubjects = () => {
-    navigate(`/course/${courseId}/subjects?year=${year}&semester=${semester}`);
+    if(year && semester){
+      navigate(`/course/${courseId}/subjects?year=${year}&semester=${semester}`);
+    }
+    else if(year && !semester){
+      alert('please select semester');
+    }
+    else if(!year && semester){
+      alert('please select year');
+    }
+    else{
+      alert('please select year and semester');
+    }
+
   };
 
   return (
