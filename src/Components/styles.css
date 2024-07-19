@@ -137,6 +137,7 @@ main .introduction {
     padding: 10px;
     margin: 0 10px;
     font-size: 1em;
+    min-width: 200px;
 }
 
 .branches {
@@ -186,7 +187,7 @@ main .introduction {
 }
 
 .card:hover {
-    transform: scale(1.05);
+    transform: scale(1.03);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
@@ -369,7 +370,16 @@ main .introduction {
         margin: 0;
         padding: 0;
     }
-
+    .dropdown-container{
+        flex-direction: column;
+    }
+    .dropdown-container select{
+        margin:10px 50px;
+    }
+    .dropdown-container button{
+        margin-bottom: 0;
+        margin:10px 50px;
+    }
     .center-card-container .card-link {
         width: 100%;
     }
