@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { useLocation, useParams } from 'react-router-dom';
+// import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './styles.css';
 // import {Alert} from 'react-alert'
-
+// import CourseDetail from './CourseDetail';
 const subjects = {
   CSE: {
     '1-1': {
@@ -167,7 +168,7 @@ const SubjectList = () => {
     setIsNavVisible(!isNavVisible);
   };
 
-  if(year && semester){
+  // if(year && semester){
   return (
     <div>
       <header>
@@ -220,15 +221,24 @@ const SubjectList = () => {
     </div>
   );
 }
-else if(year && !semester){
-  alert('please select semester');
-}
-else if(!year && semester){
-  alert('please select year');
-}
-else{
-  alert('please select year and semester');
-};
-}
+// else if(year && !semester){
+//   return(
+//     // alert('please select semester')
+//     <CourseDetail />
+//   );
+// }
+// else if(!year && semester){
+//   return(
+//   // alert('please select year')
+//   <CourseDetail />
+//   );
+// }
+// else{
+//   return(
+//   // alert('please select year and semester')
+//   <CourseDetail />
+// )
+// };
+// }
 
 export default SubjectList;
