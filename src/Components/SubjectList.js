@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useLocation, useParams } from 'react-router-dom';
 // import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './styles.css';
@@ -173,7 +174,7 @@ const SubjectList = () => {
     <div>
       <header>
         <div className="header-content">
-          <h1>Subjects</h1>
+          <h1>{courseId} Subjects</h1>
         </div>
       </header>
       <nav>
@@ -184,6 +185,7 @@ const SubjectList = () => {
         </div>
         <ul id="nav-links" className={isNavVisible ? 'show' : ''}>
           <li><a href="/">Home</a></li>
+          <li><Link to={`/course/${courseId}`}>{courseId}</Link></li>
         </ul>
       </nav>
       <main>
@@ -221,24 +223,5 @@ const SubjectList = () => {
     </div>
   );
 }
-// else if(year && !semester){
-//   return(
-//     // alert('please select semester')
-//     <CourseDetail />
-//   );
-// }
-// else if(!year && semester){
-//   return(
-//   // alert('please select year')
-//   <CourseDetail />
-//   );
-// }
-// else{
-//   return(
-//   // alert('please select year and semester')
-//   <CourseDetail />
-// )
-// };
-// }
 
 export default SubjectList;
