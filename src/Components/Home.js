@@ -88,7 +88,7 @@ const Home = () => {
         </div>
       </main>
       <footer>
-        <p>&copy; 2024 EduZenith. All rights reserved.</p>
+        <p class="fc">&copy; 2024 EduZenith. All rights reserved.</p>
       </footer>
     </div>
   );
