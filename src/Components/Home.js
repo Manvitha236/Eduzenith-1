@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './styles.css';
-
+// import About from './Components/About';
 const courses = [
   {
     id: 'CSE',
@@ -63,6 +63,7 @@ const Home = () => {
               <Link to={`/course/${course.id}`}>{course.id}</Link>
             </li>
           ))}
+          <li><Link to='/About'>About</Link></li>
         </ul>
       </nav>
       <main>
