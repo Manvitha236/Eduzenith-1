@@ -36,11 +36,11 @@ const courses = [
 ];
 
 const About = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  // const [isOpen, setIsOpen] = useState(false);
 
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
+  // const toggleMenu = () => {
+  //   setIsOpen(!isOpen);
+  // };
   const [isNavVisible, setIsNavVisible] = useState(false);
 
   const handleHamburgerClick = () => {
@@ -99,11 +99,11 @@ Our team consists of experienced educators, talented content creators, and techn
 <h3>Alex Prince</h3>
 <p>Alex is a highly skilled developer with extensive experience in web development and technology integration. His expertise in building robust and user-friendly websites has been instrumental in the creation of this platform.</p>
 
-<h3>Sony Stark</h3>
-<p>Sony is a talented developer with a background in multimedia design and instructional technology. She excels at creating engaging and interactive web content, ensuring a seamless and visually appealing user experience.</p>
+<h3>Venkata Manvitha</h3>
+<p>Manvitha is a talented developer with a background in multimedia design and instructional technology. She excels at creating engaging and interactive web content, ensuring a seamless and visually appealing user experience.</p>
 <br></br>
 
-<p>Together, Alex and Sony have developed this website, combining their technical skills to create a comprehensive and engaging educational resource.</p>
+<p>Together, Alex and Manvitha have developed this website, combining their technical skills to create a comprehensive and engaging educational resource.</p>
       
       <h2 class="ah2">Join Us on Our Journey</h2>
       <p>Whether you are a student looking for study aids, a teacher seeking resources for your classroom, or a curious mind eager to learn something new, <strong>EduZenith</strong> is here to support your educational journey. Join us as we explore the possibilities of learning and inspire a new generation of thinkers and leaders.</p>

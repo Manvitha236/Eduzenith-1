@@ -450,3 +450,13 @@ footer {
 #courseContainer div{
     height:100%;
 }
+.card-content a{
+    text-decoration: none;
+    color:#333;
+}
+.units{
+    display: grid;
+    gap: 20px;
+    padding: 20px;
+    margin-bottom: 40px;
+}
