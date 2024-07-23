@@ -169,7 +169,6 @@ const SubjectList = () => {
     setIsNavVisible(!isNavVisible);
   };
 
-  // if(year && semester){
   return (
     <div>
       <header>
@@ -200,7 +199,9 @@ const SubjectList = () => {
           {theory.map((subject, index) => (
             <div key={index} className="card">
               <div className="card-content">
-                <h4>{subject}</h4>
+              <Link to={`/course/${courseId}/subject/${subject}`}>
+                  <h4>{subject}</h4>
+                </Link>
               </div>
             </div>
           ))}
