@@ -212,7 +212,9 @@ const SubjectList = () => {
           {labs.map((lab, index) => (
             <div key={index} className="card">
               <div className="card-content">
-                <h4>{lab}</h4>
+              <Link to={`/course/${courseId}/subject/${lab}`}>
+                  <h4>{lab}</h4>
+                </Link>
               </div>
             </div>
           ))}
