@@ -4,6 +4,7 @@ import Home from './Components/Home';
 import CourseDetail from './Components/CourseDetail';
 import SubjectList from './Components/SubjectList';
 import SubjectDetail from './Components/Unitlist';
+import UnitDetail from './Components/UnitDetail';
 import About from './Components/About';
 import PDFViewer from './Components/PDFViewer';
 
