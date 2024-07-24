@@ -17,6 +17,7 @@ const App = () => {
         <Route path="/course/:courseId/subjects" element={<SubjectList />} />
         <Route path="/About" element={<About />} />
         <Route path="/course/:courseId/subject/:subjectName" element={<SubjectDetail />} />
+        <Route path="/course/:courseId/subject/:subjectName/unit/:unitName" element={<UnitDetail />} />
         <Route path="/course/:courseId/subject/:subjectName/units" element={<PDFViewer file='d:\CSE (1).pdf' />} />
       </Routes>
     </Router>
