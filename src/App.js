@@ -5,7 +5,7 @@ import CourseDetail from './Components/CourseDetail';
 import SubjectList from './Components/SubjectList';
 import SubjectDetail from './Components/Unitlist';
 import About from './Components/About';
-import PDFViewer from './Components/PDFViewer';
+// import PDFViewer from './Components/PDFViewer';
 
 const App = () => {
   return (
@@ -16,7 +16,6 @@ const App = () => {
         <Route path="/course/:courseId/subjects" element={<SubjectList />} />
         <Route path="/About" element={<About />} />
         <Route path="/course/:courseId/subject/:subjectName" element={<SubjectDetail />} />
-        <Route path="/course/:courseId/subject/:subjectName/units" element={<PDFViewer file='d:\CSE (1).pdf' />} />
       </Routes>
     </Router>
   );
