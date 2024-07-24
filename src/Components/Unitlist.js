@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import './styles.css';
 const subjectDetails = {
   'Calculus and Linear Algebra': ['Unit 1: Differential equations of first order and first degree', 'Unit 2: Functions of several variables', 'Unit 3: Applications of Functions of several Variable', 'Unit 4:  Linear Algebra', 'Unit 5: Matrix Algebra (Eigen Values and Eigen Vectors)', 'Unit 6: Numerical solution of transcendental equations, Interpolation'],
@@ -26,14 +26,16 @@ const SubjectDetail = () => {
       </header>
       <main>
         <div className="introduction">
-          <h2>{courseId} - Units</h2>
+          <h2>{courseId} - Units/Experiments</h2>
         </div>
-        <h3>Units</h3>
+        <h3>Units/Experiments</h3>
         <div className="units">
           {units.map((unit, index) => (
             <div key={index} className="card">
               <div className="card-content">
-                <h4>{unit}</h4>
+                <Link to={`/course/${courseId}/subject/${subjectName}/unit/${unit}`}>
+                  <h4>{unit}</h4>
+                </Link>
               </div>
             </div>
           ))}
