@@ -42,7 +42,7 @@ const subjects = {
       labs: ['Engineering Chemistry Lab','English Language Communication Skills Lab-I','Programming and Data Structures Lab']
     },
     '1-2': {
-      theory: ['Engineering Physics', 'Mathematical Methods', 'Basic Electrical and Electronics Engineering', 'Engineering Mechanics', 'Engineering Geology', 'Environmental Science'],
+      theory: ['Engineering Physics', 'Mathematical Methods', 'Basic electrical and electronics engineering', 'Engineering Mechanics', 'Engineering Geology', 'Environmental Science'],
       labs: ['Engineering Physics Lab','Workshop']
     },
     '2-1': {
@@ -94,7 +94,7 @@ const subjects = {
   },
   ECE: {
     '1-1': {
-      theory: ['Differential Equations and Multivariable calculus', 'Engineering Physics', 'Signals and Systems', 'Introduction to Latest Technical Advancements', 'Programming & Data Structures'],
+      theory: ['Differential Equations and Multivariable calculus', 'Engineering physics', 'Signals and Systems', 'Introduction to Latest Technical Advancements', 'Programming & Data Structures'],
       labs: [' Engineering Physics Lab','Electrical Technology Lab','Introduction to Latest Technical Advancements','Programming & Data Structures Lab']
     },
     '1-2': {
