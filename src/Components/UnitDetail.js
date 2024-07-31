@@ -3,8 +3,8 @@ import { useParams } from 'react-router-dom';
 import './styles.css';
 
 const unitPdfs = {
-  'Differential equations of first order and first degree': ['pdf1.pdf', 'pdf2.pdf', 'pdf3.pdf'],
-  'Functions of several variables': ['pdf1.pdf', 'pdf2.pdf'],
+  'Unit 1: Differential equations of first order and first degree': ['pdf1.pdf', 'pdf2.pdf', 'pdf3.pdf'],
+  'Unit 2: Functions of several variables': ['pdf1.pdf', 'pdf2.pdf'],
   'Applications of Functions of several Variable': ['pdf1.pdf', 'pdf2.pdf', 'pdf3.pdf', 'pdf4.pdf'],
   'Linear Algebra':['pdf1.pdf', 'pdf2.pdf', 'pdf3.pdf', 'pdf4.pdf'], 
   'Matrix Algebra (Eigen Values and Eigen Vectors)':['pdf1.pdf', 'pdf2.pdf', 'pdf3.pdf', 'pdf4.pdf'],
