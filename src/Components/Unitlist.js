@@ -22,7 +22,7 @@ const subjectDetails = {
   'Design & Analysis of Algorithms': ['Unit 1: Introduction','Unit 2: Divide and conquer','Unit 3: Greedy method','Unit 4: Dynamic Programming','Unit 5: Backtracking, Branch and Bound','Unit 6: String Matching, NP-Hard and NP-Complete problems'],
   'Database Management Systems': ['Unit 1: Introduction to database systems and Entity-Relationship data model','Unit 2: Relational algebra and Relational calculus','Unit 3: SQL','Unit 4: Normalization','Unit 5: File Organisation','Unit 6: Transactions'],
 
-  'Introduction to Operation Research': ['Unit 1: Introduciton','Unit 2: Linear Programming','Unit 3: Extension of Linear Programming','Unit 4: Transportation and Assignment','Unit 5: Queueing',"Unit 6: Costs and it's models"],
+  'Introduction to Operation Research': ['Unit 1: Introduction','Unit 2: Linear Programming','Unit 3: Extension of Linear Programming','Unit 4: Transportation and Assignment','Unit 5: Queueing',"Unit 6: Costs and it's models"],
   'Computer Organisation And Architecture':['Unit 1: Basic Functional blocks of a computer and Data Representation','Unit 2: Arithmetic and Logical Unit','Unit 3: Control Unit','Unit 4: Memory system design','Unit 5: Input -output subsystems','Unit 6: Pipelining and Parallel Processing'],
   'Data Science with Python':['Unit 1: Python Basics for Data Science','Unit 2: Working with Data in Python ','Unit 3: Data Processing','Unit 4: Data Analysis','Unit 5:  Data Visualization','Unit 6: Machine Learning using Python'],
   'Compiler Design':['Unit 1: Introduction to Compilers','Unit 2: Syntax Analysis -I','Unit 3: Syntax Analysis -II ','Unit 4: Semantic Analysis','Unit 5: Intermediate Code Generation and Code Optimization','Unit 6: Code generation'],
@@ -39,7 +39,7 @@ const subjectDetails = {
 
   'Artificial Intelligence':['Unit 1: Introduction to AI Problems','Unit 2: Heuristic Search Techniques','Unit 3: Knowledge Representation','Unit 4: Different Knowledge Representation Schemes','Unit 5: Natural Language Processing','Unit 6: Expert System Architecture'],
 
-  'Machine learning':['Unit 1: Introduction','Unit 2: Neural Networks and Genetic Algorithms','Unit 3: Bayesian learning','Unit 4: Computational Learning','Unit 5: INstance based learning','Unit 6: Advanced learning'],
+  'Machine learning':['Unit 1: Introduction','Unit 2: Neural Networks and Genetic Algorithms','Unit 3: Bayesian learning','Unit 4: Computational Learning','Unit 5: Instance based learning','Unit 6: Advanced learning'],
 
   'Data Mining':['Unit 1: Data Mining and Data Processing','Unit 2: Data Warehouse and OLAP Technology','Unit 3: Association Rules in Large Databases','Unit 4: Classification','Unit 5: Cluster Analysis','Unit 6: Outlier analysis'],
 
