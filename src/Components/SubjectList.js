@@ -102,7 +102,7 @@ const subjects = {
       labs: ['Object Oriented Programming Lab','Computational Lab','English-Language Communication skills Lab-1','Electronic Devices and Circuits Lab']
     },
     '2-1': {
-      theory: ['Probability & Random Variables', 'Analog Electronic Circuits', 'Digital Logic Design', 'Digital Signal Processing', 'Control Systems'],
+      theory: ['Probability & Random Variables', 'Analog Electronic Circuits', 'Digital logic design', 'Digital Signal Processing', 'Control Systems'],
       labs: ['Internet of Things Lab','Analog Electronic Circuits Lab','Digital Logic Design Lab','Digital Signal Processing Lab']
     },
     '2-2': {
@@ -110,7 +110,7 @@ const subjects = {
       labs: ['Communication Systems-1 Lab','Digital System Design Lab','Linear Integrated Circuits Lab']
     },
     '3-1': {
-      theory: ['Computer Networks', 'Computer Organization & Architecture', 'Communication Systems- 2'],
+      theory: ['Computer networks', 'Computer Organization & Architecture', 'Communication Systems- 2'],
       labs: ['English-Language Communication skills Lab-II',' Communication Systems Lab-II','Microprocessors,Microcontrollers & Computer Networks Lab','Radio Frequency & Microwave Engg Lab']
     },
     '3-2': {

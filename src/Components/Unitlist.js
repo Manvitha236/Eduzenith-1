@@ -33,7 +33,6 @@ const subjectDetails = {
   'Computer Networks':['Unit 1: Introduction to Computer Networks','Unit 2: The Data Link Layer','Unit 3: The Network Layer','Unit 4: The Transport Layer:','Unit 5: The Application Layer','Unit 6: Network Security'],
   'Software Engineering':['Unit 1: Introduction to Software Enginnering','Unit 2: Software Project management','Unit 3: Software design','Unit 4: Coding','Unit 5: Testing','Unit 6: Software Reliability And Quality Management'],
   'Mathematical Foundations for Data Science':['Unit 1: Basics of Linear Algebra','Unit 2: Matrix Decomposition Algorithms','Unit 3: Dimensions Reduction Algorithms','Unit 4: Calculus','Unit 5: Optimization','Unit 6: Probability'],
-// ['Unit 1: ','Unit 2: ','Unit 3: ','Unit 4: ','Unit 5: ','Unit 6: ']
 
   // 'Cryptography and Network Security':['Unit 1: ','Unit 2: ','Unit 3: ','Unit 4: ','Unit 5: ','Unit 6: '],
 
@@ -43,7 +42,35 @@ const subjectDetails = {
 
   'Data Mining':['Unit 1: Data Mining and Data Processing','Unit 2: Data Warehouse and OLAP Technology','Unit 3: Association Rules in Large Databases','Unit 4: Classification','Unit 5: Cluster Analysis','Unit 6: Outlier analysis'],
 
-  'Career Development Course':['Unit 1: Number system and Sequence & Series','Unit 2: Arithmetic and Algebra','Unit 3: Geometry , Probability & Statistics','Unit 4: Logical Reasoning and Analytical Reasoning','Unit 5:Data Interpretation ','Unit 6: Verbal Ability']
+  'Career Development Course':['Unit 1: Number system and Sequence & Series','Unit 2: Arithmetic and Algebra','Unit 3: Geometry , Probability & Statistics','Unit 4: Logical Reasoning and Analytical Reasoning','Unit 5:Data Interpretation ','Unit 6: Verbal Ability'],
+
+  // ['Unit 1: ','Unit 2: ','Unit 3: ','Unit 4: ','Unit 5: ','Unit 6: ']
+  'Differential Equations and Multivariable calculus':['Unit 1: Differential equations of first order and first degree','Unit 2: Linear differential equations of higher order','Unit 3: Sequences and Series','Unit 4: Functions of several variables','Unit 5: Applications of Functions of several Variable','Unit 6: Beta and Gamma Function'],
+  'Engineering physics':['Unit 1: Introduction to Engineering Physics','Unit 2: Electrostatics -1','Unit 3: Electrostatics -2','Unit 4: Magnetostatics ','Unit 5: : Time varying fields ','Unit 6:: Semiconductor physics'],
+  'Engineering Graphic and Design':['Unit 1: Introduction to Engineering Drawing','Unit 2: Orthographic projections','Unit 3: Projection of Solids','Unit 4: Section of solid','Unit 5: Introduction to AutoCAD','Unit 6: Computer Graphics'],
+  'Electrical Technology':['Unit 1: Basics of Electrical Technology','Unit 2: Network Theorems','Unit 3: Transient response of R, L, C circuits','Unit 4: Three phase network','Unit 5: Introduction to DC motors','Unit 6: DC-DC Convertors'],
+  'Programming and Data Structures':['Unit 1: Introduction to C','Unit 2: Arrays','Unit 3:Functions','Unit 4: Structure & Union','Unit 5: Pointers','Unit 6: Data Structures'],
+  
+  'Signals and Systems ': ['Unit 1: Introduction to  Signals and Systems','Unit 2: Continuous time LTI Systems','Unit 3: Fourier series','Unit 4: Continuous time Fourier Transform','Unit 5:Laplace Transform ','Unit 6: Sampling'],
+  'Probability and Random variables':['Unit 1: Introduction to Probability','Unit 2: Random Variables','Unit 3: Distributions','Unit 4:Functions of Random variables ','Unit 5: Inequality and Generating functions','Unit 6: Order statistics'],
+  'Digital logic design':['Unit 1: Number systems and Boolean Algebra','Unit 2:Combinational Circuits','Unit 3: Sequential Circuits','Unit 4: Counters and Registers','Unit 5: Encoder,Decoder,Multiplexer,Demultiplexer','Unit 6: Memory Structure and Timing'],
+  'Control Systems ':['Unit 1: Block diagrams and SFG','Unit 2: Mathematical modeling of Circuits','Unit 3: Time response Analysis','Unit 4:Root locus and RH Criteria','Unit 5: Frequency Domain Representation','Unit 6: State variables and State model,'],
+  'Communication Systems-1':['Unit 1: Random Process','Unit 2: Power Spectral Density','Unit 3: Review of signals and systems','Unit 4: Amplitude and Angle Modulation','Unit 5: Quantization and DPCM, DM','Unit 6:Noise '],
+  
+  'Computer Organization and Architecture':['Unit 1: 8086 microprocessor','Unit 2: MIPS architecture','Unit 3: Introduction to Processor','Unit 4: Pipelining','Unit 5: Memory Hierarchy','Unit 6: Memory and Operating System'],
+  'Mathematical Methods':['Unit 1: Linear Algebra','Unit 2: Eigen values and Eigen vectors','Unit 3: Multiple integrals','Unit 4: Vector calculus','Unit 5: Root finding Methods and Interpolation','Unit 6: Numerical integration and numerical solution of IVP'],
+  'Object Oriented Programming':['Unit 1: : Review of C and Programming in C++','Unit 2: : OOP in C++','Unit 3: Inheritance and Polymorphism','Unit 4: Type Casting & Exceptions','Unit 5: Classes Templates & STL','Unit 6: File handling and Multithreading'],
+  'Basic Electronics':['Unit 1: Introduction to Electronics','Unit 2: Diodes','Unit 3: PN Diode Applications','Unit 4: MOSFETs','Unit 5: BJT Characteristics','Unit 6: Transistor Biasing and Stabilization-BJT'],
+  'Network Theory':['Unit 1: Basic concepts of Networks','Unit 2: Transient analysis of First order Circuits','Unit 3: Transient analysis of Second order Circuits','Unit 4: Circuit Analysis Using Laplace Transform','Unit 5: Two Port Network parameters','Unit 6: State Space Models For Electrical Networks'],
+
+  // 'Internet of Things Lab':['Unit 1: Introduction & Overview of Internet of things','Unit 2: Exploring the arduino board and its software ID','Unit 3: Introduction to sensors and displays','Unit 4: Communication','Unit 5: ','Unit 6: ']
+  'Analog Electronic Circuits':['Unit 1: MOSFET Biasing and Its Small Signal Analysis','Unit 2: Multi-Stage Amplifiers & Differential Amplifiers of MOSFET','Unit 3: Current mirrors in MOSFETs','Unit 4: CMOScircuits','Unit 5: BJT- Configurations and Multi stage amplifiers','Unit 6: BJT- Differential amplifiers and Current mirrors'],
+  'Digital Signal Processing':['Unit 1: Introduction to Digital Signal Processing','Unit 2: Discrete Time Fourier Transform (DTFT)','Unit 3: Discrete Fourier Transform (DFT) and Fast Fourier Transform (FFT)','Unit 4: Z transforms','Unit 5: Filter Concepts','Unit 6: Realization Of Digital Filters'],
+  'Digital System Design':['Unit 1: HDL for Digital System Designs','Unit 2: HDL for Digital System Designs','Unit 3: Finite State Machines','Unit 4: HDL for Finite State Machines','Unit 5: Digital Systems modeling','Unit 6: HDL Modeling of USB Protocol Analyzer'],
+  'Linear Integrated Circuits':['Unit 1: Feedback Amplifiers','Unit 2: Operational Amplifiers','Unit 3: Wave shaping circuits & Oscillators','Unit 4: DC-DC Converters','Unit 5: PLL','Unit 6: Data Converters'],
+  // ['Unit 1: ','Unit 2: ','Unit 3: ','Unit 4: ','Unit 5: ','Unit 6: ']
+  'Electromagnetic waves and Guided media':['Unit 1: Introduction to Electromagnetic waves and Guided media','Unit 2: Wave Propagation','Unit 3: Wave propagation at interfaces','Unit 4: Transmission Lines: Parameters','Unit 5: Waveguides-I','Unit 6: Waveguides-II'],
+  'Computer networks':['Unit 1: Data communication Components','Unit 2: LAN','Unit 3: Data Link Layer and Medium Access Sub Layer','Unit 4: Network Layer','Unit 5: Transport Layer','Unit 6: Application Layer'],
 
 
 };
