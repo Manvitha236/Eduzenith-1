@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react'; // Import useEffect and useState
 import { useParams } from 'react-router-dom';
+import * as pdfjsLib from 'pdfjs-dist/webpack'; 
 import './styles.css';
 
 const unitPdfs = {
@@ -310,6 +311,35 @@ const UnitDetail = () => {
   const { subjectName, unitName } = useParams();
   const pdfs = unitPdfs[unitName] || [];
 
+  const [thumbnails, setThumbnails] = useState([]);
+
+  useEffect(() => {
+    const loadThumbnails = async () => {
+      const thumbs = await Promise.all(
+        pdfs.map(async (pdf) => {
+          const pdfUrl = `/path/to/pdfs/${pdf}`;
+          const loadingTask = pdfjsLib.getDocument(pdfUrl);
+          const pdfDoc = await loadingTask.promise;
+          const page = await pdfDoc.getPage(1);
+          const viewport = page.getViewport({ scale: 0.5 });
+          const canvas = document.createElement('canvas');
+          const context = canvas.getContext('2d');
+          canvas.height = viewport.height;
+          canvas.width = viewport.width;
+          const renderContext = {
+            canvasContext: context,
+            viewport: viewport,
+          };
+          await page.render(renderContext).promise;
+          return canvas.toDataURL();
+        })
+      );
+      setThumbnails(thumbs);
+    };
+
+    loadThumbnails();
+  }, [pdfs]);
+
   return (
     <div>
       <header>
@@ -325,7 +355,7 @@ const UnitDetail = () => {
         <div className="pdf-list">
           {pdfs.map((pdf, index) => (
             <div key={index} className="pdf-item">
-              <a href={`${pdf}`} target="_blank" rel="noopener noreferrer">{pdf}</a>
+              <a href={`/path/to/pdfs/${pdf}`} target="_blank" rel="noopener noreferrer">{pdf}</a>
             </div>
           ))}
         </div>
