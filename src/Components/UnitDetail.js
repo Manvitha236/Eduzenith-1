@@ -3,12 +3,12 @@ import { useParams } from 'react-router-dom';
 import './styles.css';
 
 const unitPdfs = {
-  'Unit 1: Differential equations of first order and first degree': ['pdf1.pdf', 'pdf2.pdf', 'pdf3.pdf', 'pdf4.pdf'],
-  'Unit 2: Functions of several variables': ['pdf2.pdf'],
-  'Unit 3: Applications of Functions of several Variable': ['pdf1.pdf', 'pdf2.pdf', 'pdf3.pdf', 'pdf4.pdf'],
-  'Unit 4: Linear Algebra':['pdf1.pdf', 'pdf2.pdf', 'pdf3.pdf', 'pdf4.pdf'], 
-  'Unit 5: Matrix Algebra (Eigen Values and Eigen Vectors)':['pdf1.pdf', 'pdf2.pdf', 'pdf3.pdf', 'pdf4.pdf'],
-  'Unit 6: Numerical solution of transcendental equations, Interpolation':['pdf1.pdf', 'pdf2.pdf', 'pdf3.pdf', 'pdf4.pdf'],
+  'Unit 1: Differential equations of first order and first degree': ['https://storage.googleapis.com/eduzenith/cla/cla%20unit%201.pdf'],
+  'Unit 2: Functions of several variables': ['https://storage.googleapis.com/eduzenith/cla/cla%20unit2.pdf'],
+  'Unit 3: Applications of Functions of several Variable': ['https://storage.googleapis.com/eduzenith/cla/cla%20unit3.pdf'],
+  'Unit 4: Linear Algebra':['https://storage.googleapis.com/eduzenith/cla/cla%20unit4.pdf'], 
+  'Unit 5: Matrix Algebra (Eigen Values and Eigen Vectors)':['https://storage.googleapis.com/eduzenith/cla/cla%20unit5.pdf'],
+  'Unit 6: Numerical solution of transcendental equations, Interpolation':['https://storage.googleapis.com/eduzenith/cla/cla%20unit6.pdf'],
   'Unit 1: DC Circuits':['pdf1.pdf', 'pdf2.pdf', 'pdf3.pdf', 'pdf4.pdf'],
   'Unit 2: AC Circuits':['pdf1.pdf', 'pdf2.pdf', 'pdf3.pdf', 'pdf4.pdf'],
   'Unit 3: DC Machines':['pdf1.pdf', 'pdf2.pdf', 'pdf3.pdf', 'pdf4.pdf'], 
