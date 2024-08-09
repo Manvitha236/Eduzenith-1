@@ -45,7 +45,7 @@ const subjectDetails = {
   'Career Development Course':['Unit 1: Number system and Sequence & Series','Unit 2: Arithmetic and Algebra','Unit 3: Geometry , Probability & Statistics','Unit 4: Logical Reasoning and Analytical Reasoning','Unit 5:Data Interpretation ','Unit 6: Verbal Ability'],
 
   // ['Unit 1: ','Unit 2: ','Unit 3: ','Unit 4: ','Unit 5: ','Unit 6: ']
-  'Differential Equations and Multivariable calculus':['Unit 1: Differential equations of first order and first degree','Unit 2: Linear differential equations of higher order','Unit 3: Sequences and Series','Unit 4: Functions of several variables','Unit 5: Applications of Functions of several Variable','Unit 6: Beta and Gamma Function'],
+  'Differential Equations and Multivariable calculus':['Unit 1: Differential Equations of First order and First degree','Unit 2: Linear differential equations of higher order','Unit 3: Sequences and Series','Unit 4: Functions of several variables','Unit 5: Applications of Functions of several Variable','Unit 6: Beta and Gamma Function'],
   'Engineering physics':['Unit 1: Introduction to Engineering Physics','Unit 2: Electrostatics -1','Unit 3: Electrostatics -2','Unit 4: Magnetostatics ','Unit 5: : Time varying fields ','Unit 6:: Semiconductor physics'],
   'Engineering Graphic and Design':['Unit 1: Introduction to Engineering Drawing','Unit 2: Orthographic projections','Unit 3: Projection of Solids','Unit 4: Section of solid','Unit 5: Introduction to AutoCAD','Unit 6: Computer Graphics'],
   'Electrical Technology':['Unit 1: Basics of Electrical Technology','Unit 2: Network Theorems','Unit 3: Transient response of R, L, C circuits','Unit 4: Three phase network','Unit 5: Introduction to DC motors','Unit 6: DC-DC Convertors'],
@@ -53,7 +53,7 @@ const subjectDetails = {
   
   'Signals and Systems ': ['Unit 1: Introduction to  Signals and Systems','Unit 2: Continuous time LTI Systems','Unit 3: Fourier series','Unit 4: Continuous time Fourier Transform','Unit 5:Laplace Transform ','Unit 6: Sampling'],
   'Probability and Random variables':['Unit 1: Introduction to Probability','Unit 2: Random Variables','Unit 3: Distributions','Unit 4:Functions of Random variables ','Unit 5: Inequality and Generating functions','Unit 6: Order statistics'],
-  'Digital logic design':['Unit 1: Number systems and Boolean Algebra','Unit 2:Combinational Circuits','Unit 3: Sequential Circuits','Unit 4: Counters and Registers','Unit 5: Encoder,Decoder,Multiplexer,Demultiplexer','Unit 6: Memory Structure and Timing'],
+  'Digital logic design':['Unit 1: Number Systems and Boolean Algebra','Unit 2:Combinational Circuits','Unit 3: Sequential Circuits','Unit 4: Counters and Registers','Unit 5: Encoder,Decoder,Multiplexer,Demultiplexer','Unit 6: Memory Structure and Timing'],
   'Control Systems ':['Unit 1: Block diagrams and SFG','Unit 2: Mathematical modeling of Circuits','Unit 3: Time response Analysis','Unit 4:Root locus and RH Criteria','Unit 5: Frequency Domain Representation','Unit 6: State variables and State model,'],
   'Communication Systems-1':['Unit 1: Random Process','Unit 2: Power Spectral Density','Unit 3: Review of signals and systems','Unit 4: Amplitude and Angle Modulation','Unit 5: Quantization and DPCM, DM','Unit 6:Noise '],
   
