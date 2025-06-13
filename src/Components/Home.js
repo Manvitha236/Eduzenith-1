@@ -2,7 +2,7 @@ import React from 'react';
 import Header from '../components/ui/Header';
 import Footer from '../components/ui/Footer';
 import CourseCard from '../components/ui/CourseCard';
-import { BookOpen, Award, TrendingUp, ArrowRight, Star, Zap, Target, Globe } from 'lucide-react';
+import { BookOpen, Award, TrendingUp, ArrowRight, Star, Zap, Target, Globe, Users, GraduationCap } from 'lucide-react';
 
 const courses = [
   {
@@ -56,8 +56,8 @@ const features = [
 const stats = [
   { number: '5', label: 'Engineering Branches', suffix: '', icon: <Target size={24} /> },
   { number: '100', label: 'Subjects Covered', suffix: '+', icon: <BookOpen size={24} /> },
-  { number: '10', label: 'Years Experience', suffix: '+', icon: <Award size={24} /> },
-  { number: '5000', label: 'Students Helped', suffix: '+', icon: <Target size={24} /> }
+  { number: '24', label: 'Available 24/7', suffix: '/7', icon: <Globe size={24} /> },
+  { number: '1000', label: 'Study Materials', suffix: '+', icon: <GraduationCap size={24} /> }
 ];
 
 const testimonials = [
