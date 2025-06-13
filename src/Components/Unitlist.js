@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link, useParams } from 'react-router-dom';
+import { ArrowLeft, BookOpen, FileText, Clock, Target } from 'lucide-react';
 import './styles.css';
+
 const subjectDetails = {
   'Calculus and Linear Algebra': ['Unit 1: Differential equations of first order and first degree', 'Unit 2: Functions of several variables', 'Unit 3: Applications of Functions of several Variable', 'Unit 4:  Linear Algebra', 'Unit 5: Matrix Algebra (Eigen Values and Eigen Vectors)', 'Unit 6: Numerical solution of transcendental equations, Interpolation'],
   'Basic Electrical and Electronics Engineering': ['Unit 1: DC Circuits', 'Unit 2: AC Circuits', 'Unit 3: DC Machines', 'Unit 4: AC Machines', 'Unit 5: Semiconductor Devices', 'Unit 6: Transistors'],
@@ -13,7 +15,7 @@ const subjectDetails = {
   'Managerial Economics and Financial Analysis':['Unit 1: Introduction to Managerial Economics and Financial Analysis','Unit 2: Production','Unit 3: Market Structure','Unit 4: Capital and Capital Budgeting','Unit 5: Financial Accounting','Unit 6: Financial Statements'],
   'Object Oriented Programming through JAVA': ['Unit 1: Introduction to java','Unit 2: Strings and Data Structures','Unit 3: Inheritance and Interface','Unit 4: File Handling and Exception Handling','Unit 5: Packages and Multithreading','Unit 6: Event Handling and Swings'],
   'Data Structures':['Unit 1: Linked Lists','Unit 2: Stacks and Queues','Unit 3: Sortings, Searching and Hashing','Unit 4: Trees','Unit 5: Trees and Operations','Unit 6: Graphs'],
-  'Environmental Science': ['Unit 1: The Multidisciplinary Nature of Environmental Studies and Natural Resources ','Unit 2: Ecosystems','Unit 3:  Biodiversity and It’s Conservation','Unit 4: Environmental Pollution','Unit 5: Social Issues and the Environment','Unit 6: Human Population and the Environment'],
+  'Environmental Science': ['Unit 1: The Multidisciplinary Nature of Environmental Studies and Natural Resources ','Unit 2: Ecosystems','Unit 3:  Biodiversity and It's Conservation','Unit 4: Environmental Pollution','Unit 5: Social Issues and the Environment','Unit 6: Human Population and the Environment'],
   
 
   'Probability and Statistics': ['Unit 1: Probability and theorems in Probability ','Unit 2: Probability Distributions','Unit 3: Moment Generating functions','Unit 4: Order Statistics and Central Limit theorem','Unit 5: Sampling Theory','Unit 6: Large Sample Tests'],
@@ -71,41 +73,528 @@ const subjectDetails = {
   // ['Unit 1: ','Unit 2: ','Unit 3: ','Unit 4: ','Unit 5: ','Unit 6: ']
   'Electromagnetic waves and Guided media':['Unit 1: Introduction to Electromagnetic waves and Guided media','Unit 2: Wave Propagation','Unit 3: Wave propagation at interfaces','Unit 4: Transmission Lines: Parameters','Unit 5: Waveguides-I','Unit 6: Waveguides-II'],
   'Computer networks':['Unit 1: Data communication Components','Unit 2: LAN','Unit 3: Data Link Layer and Medium Access Sub Layer','Unit 4: Network Layer','Unit 5: Transport Layer','Unit 6: Application Layer'],
-
-
 };
 
 const SubjectDetail = () => {
   const { courseId, subjectName } = useParams();
   const units = subjectDetails[subjectName] || [];
 
+  const getSubjectType = (name) => {
+    if (name.toLowerCase().includes('lab') || name.toLowerCase().includes('laboratory')) {
+      return 'Laboratory';
+    }
+    return 'Theory';
+  };
+
+  const getUnitNumber = (unit) => {
+    const match = unit.match(/Unit (\d+):/);
+    return match ? match[1] : '1';
+  };
+
+  const getUnitTitle = (unit) => {
+    return unit.replace(/Unit \d+:\s*/, '');
+  };
+
   return (
-    <div>
-      <header>
-        <div className="header-content">
-          <h1>{subjectName}</h1>
+    <div className="subject-detail-page">
+      {/* Modern Header */}
+      <header className="subject-header">
+        <div className="header-background">
+          <div className="header-overlay"></div>
         </div>
-      </header>
-      <main>
-        <div className="introduction">
-          <h2>{courseId} - Units/Experiments</h2>
-        </div>
-        <h3>Units/Experiments</h3>
-        <div className="units">
-          {units.map((unit, index) => (
-            <div key={index} className="card">
-              <div className="card-content">
-                <Link to={`/course/${courseId}/subject/${subjectName}/unit/${unit}`}>
-                  <h4>{unit}</h4>
-                </Link>
+        <div className="container">
+          <div className="header-content">
+            <Link to={`/course/${courseId}/subjects?year=1&semester=1`} className="back-button">
+              <ArrowLeft size={20} />
+              <span>Back to Subjects</span>
+            </Link>
+            
+            <div className="subject-info">
+              <div className="subject-icon-large">
+                {getSubjectType(subjectName) === 'Laboratory' ? '🧪' : '📚'}
+              </div>
+              <div className="subject-details">
+                <div className="subject-type-badge">
+                  {getSubjectType(subjectName)}
+                </div>
+                <h1>{subjectName}</h1>
+                <div className="subject-meta">
+                  <div className="meta-item">
+                    <Target size={16} />
+                    <span>{units.length} Units</span>
+                  </div>
+                  <div className="meta-item">
+                    <Clock size={16} />
+                    <span>Course: {courseId}</span>
+                  </div>
+                </div>
               </div>
             </div>
-          ))}
+          </div>
+        </div>
+      </header>
+
+      {/* Navigation Breadcrumb */}
+      <nav className="breadcrumb-nav">
+        <div className="container">
+          <div className="breadcrumb">
+            <Link to="/">Home</Link>
+            <span>/</span>
+            <Link to={`/course/${courseId}`}>{courseId}</Link>
+            <span>/</span>
+            <span className="current">Units</span>
+          </div>
+        </div>
+      </nav>
+
+      {/* Main Content */}
+      <main className="main-content">
+        <div className="container">
+          <div className="content-header">
+            <div className="content-info">
+              <h2>Course Units</h2>
+              <p>Explore the comprehensive curriculum structure for {subjectName}</p>
+            </div>
+            <div className="units-count">
+              {units.length} Units Available
+            </div>
+          </div>
+
+          {units.length > 0 ? (
+            <div className="units-grid">
+              {units.map((unit, index) => (
+                <div key={index} className="unit-card">
+                  <div className="unit-header">
+                    <div className="unit-number">
+                      {getUnitNumber(unit)}
+                    </div>
+                    <div className="unit-icon">
+                      <FileText size={20} />
+                    </div>
+                  </div>
+                  
+                  <div className="unit-content">
+                    <h3>{getUnitTitle(unit)}</h3>
+                    <div className="unit-meta">
+                      <span className="unit-type">
+                        {getSubjectType(subjectName) === 'Laboratory' ? 'Experiment' : 'Theory Unit'}
+                      </span>
+                    </div>
+                  </div>
+                  
+                  <div className="unit-footer">
+                    <Link 
+                      to={`/course/${courseId}/subject/${subjectName}/unit/${unit}`}
+                      className="btn btn-primary"
+                    >
+                      <BookOpen size={16} />
+                      View Materials
+                    </Link>
+                  </div>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div className="empty-state">
+              <div className="empty-icon">📚</div>
+              <h3>No Units Available</h3>
+              <p>Units for this subject will be available soon. Please check back later.</p>
+            </div>
+          )}
         </div>
       </main>
-      <footer>
-        <p className="fc">&copy; 2024 EduZenith. All rights reserved.</p>
+
+      {/* Footer */}
+      <footer className="modern-footer">
+        <div className="container">
+          <p>&copy; 2024 EduZenith. All rights reserved.</p>
+        </div>
       </footer>
+
+      <style jsx>{`
+        .subject-detail-page {
+          min-height: 100vh;
+          background: var(--neutral-50);
+        }
+
+        /* Subject Header */
+        .subject-header {
+          position: relative;
+          background: linear-gradient(135deg, var(--primary-600) 0%, var(--primary-800) 100%);
+          color: white;
+          padding: var(--space-12) 0 var(--space-8);
+          overflow: hidden;
+        }
+
+        .header-background {
+          position: absolute;
+          inset: 0;
+          background-image: 
+            radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+            radial-gradient(circle at 75% 75%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+          background-size: 100px 100px;
+        }
+
+        .header-overlay {
+          position: absolute;
+          inset: 0;
+          background: rgba(0, 0, 0, 0.1);
+        }
+
+        .header-content {
+          position: relative;
+          z-index: 2;
+        }
+
+        .back-button {
+          display: inline-flex;
+          align-items: center;
+          gap: var(--space-2);
+          color: rgba(255, 255, 255, 0.9);
+          text-decoration: none;
+          font-size: var(--text-sm);
+          margin-bottom: var(--space-6);
+          padding: var(--space-2) var(--space-4);
+          border-radius: var(--radius-lg);
+          background: rgba(255, 255, 255, 0.1);
+          backdrop-filter: blur(10px);
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          transition: all var(--transition-fast);
+        }
+
+        .back-button:hover {
+          background: rgba(255, 255, 255, 0.2);
+          color: white;
+        }
+
+        .subject-info {
+          display: flex;
+          align-items: center;
+          gap: var(--space-6);
+        }
+
+        .subject-icon-large {
+          font-size: 4rem;
+          filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+        }
+
+        .subject-type-badge {
+          display: inline-block;
+          padding: var(--space-1) var(--space-3);
+          background: rgba(255, 255, 255, 0.2);
+          border-radius: var(--radius-full);
+          font-size: var(--text-xs);
+          font-weight: 600;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+          margin-bottom: var(--space-2);
+        }
+
+        .subject-details h1 {
+          font-size: var(--text-4xl);
+          font-weight: 800;
+          margin-bottom: var(--space-4);
+          color: white;
+          line-height: var(--leading-tight);
+        }
+
+        .subject-meta {
+          display: flex;
+          gap: var(--space-4);
+          flex-wrap: wrap;
+        }
+
+        .meta-item {
+          display: flex;
+          align-items: center;
+          gap: var(--space-2);
+          padding: var(--space-2) var(--space-4);
+          background: rgba(255, 255, 255, 0.15);
+          border-radius: var(--radius-full);
+          font-size: var(--text-sm);
+          font-weight: 500;
+          backdrop-filter: blur(10px);
+          border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* Breadcrumb Navigation */
+        .breadcrumb-nav {
+          background: white;
+          border-bottom: 1px solid var(--secondary-200);
+          padding: var(--space-4) 0;
+        }
+
+        .breadcrumb {
+          display: flex;
+          align-items: center;
+          gap: var(--space-2);
+          font-size: var(--text-sm);
+        }
+
+        .breadcrumb a {
+          color: var(--secondary-600);
+          text-decoration: none;
+          transition: color var(--transition-fast);
+        }
+
+        .breadcrumb a:hover {
+          color: var(--primary-600);
+        }
+
+        .breadcrumb span {
+          color: var(--secondary-400);
+        }
+
+        .breadcrumb .current {
+          color: var(--primary-600);
+          font-weight: 500;
+        }
+
+        /* Main Content */
+        .main-content {
+          padding: var(--space-12) 0;
+        }
+
+        .content-header {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-bottom: var(--space-8);
+          padding: var(--space-6);
+          background: white;
+          border-radius: var(--radius-2xl);
+          box-shadow: var(--shadow-sm);
+          border: 1px solid var(--secondary-200);
+        }
+
+        .content-info h2 {
+          font-size: var(--text-2xl);
+          font-weight: 700;
+          color: var(--secondary-900);
+          margin-bottom: var(--space-1);
+        }
+
+        .content-info p {
+          color: var(--secondary-600);
+          margin: 0;
+        }
+
+        .units-count {
+          padding: var(--space-3) var(--space-6);
+          background: var(--primary-100);
+          color: var(--primary-700);
+          border-radius: var(--radius-full);
+          font-size: var(--text-sm);
+          font-weight: 600;
+        }
+
+        .units-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+          gap: var(--space-6);
+        }
+
+        .unit-card {
+          background: white;
+          border-radius: var(--radius-2xl);
+          box-shadow: var(--shadow-sm);
+          border: 1px solid var(--secondary-200);
+          transition: all var(--transition-normal);
+          overflow: hidden;
+          position: relative;
+        }
+
+        .unit-card::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          height: 4px;
+          background: linear-gradient(90deg, var(--primary-500), var(--accent-500));
+          transform: scaleX(0);
+          transition: transform var(--transition-normal);
+        }
+
+        .unit-card:hover {
+          transform: translateY(-4px);
+          box-shadow: var(--shadow-xl);
+        }
+
+        .unit-card:hover::before {
+          transform: scaleX(1);
+        }
+
+        .unit-header {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: var(--space-6);
+          background: var(--neutral-50);
+          border-bottom: 1px solid var(--secondary-200);
+        }
+
+        .unit-number {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 48px;
+          height: 48px;
+          background: var(--primary-600);
+          color: white;
+          border-radius: var(--radius-xl);
+          font-size: var(--text-lg);
+          font-weight: 700;
+        }
+
+        .unit-icon {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 40px;
+          height: 40px;
+          background: var(--secondary-100);
+          color: var(--secondary-600);
+          border-radius: var(--radius-lg);
+        }
+
+        .unit-content {
+          padding: var(--space-6);
+        }
+
+        .unit-content h3 {
+          font-size: var(--text-lg);
+          font-weight: 600;
+          color: var(--secondary-900);
+          line-height: var(--leading-tight);
+          margin-bottom: var(--space-3);
+        }
+
+        .unit-meta {
+          margin-bottom: var(--space-4);
+        }
+
+        .unit-type {
+          display: inline-block;
+          padding: var(--space-1) var(--space-3);
+          background: var(--secondary-100);
+          color: var(--secondary-600);
+          border-radius: var(--radius-full);
+          font-size: var(--text-xs);
+          font-weight: 500;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+        }
+
+        .unit-footer {
+          padding: var(--space-6);
+          border-top: 1px solid var(--secondary-200);
+          background: var(--neutral-50);
+        }
+
+        .btn {
+          display: inline-flex;
+          align-items: center;
+          gap: var(--space-2);
+          padding: var(--space-3) var(--space-6);
+          font-size: var(--text-sm);
+          font-weight: 500;
+          border: none;
+          border-radius: var(--radius-lg);
+          text-decoration: none;
+          cursor: pointer;
+          transition: all var(--transition-fast);
+          width: 100%;
+          justify-content: center;
+        }
+
+        .btn-primary {
+          background: var(--primary-600);
+          color: white;
+        }
+
+        .btn-primary:hover {
+          background: var(--primary-700);
+          transform: translateY(-1px);
+        }
+
+        /* Empty State */
+        .empty-state {
+          text-align: center;
+          padding: var(--space-20) var(--space-8);
+          background: white;
+          border-radius: var(--radius-2xl);
+          box-shadow: var(--shadow-sm);
+          border: 1px solid var(--secondary-200);
+        }
+
+        .empty-icon {
+          font-size: 4rem;
+          margin-bottom: var(--space-6);
+          opacity: 0.5;
+        }
+
+        .empty-state h3 {
+          font-size: var(--text-xl);
+          color: var(--secondary-900);
+          margin-bottom: var(--space-3);
+        }
+
+        .empty-state p {
+          color: var(--secondary-600);
+          margin: 0;
+        }
+
+        /* Footer */
+        .modern-footer {
+          background: var(--secondary-900);
+          color: white;
+          padding: var(--space-8) 0;
+          text-align: center;
+          margin-top: var(--space-20);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+          .subject-info {
+            flex-direction: column;
+            text-align: center;
+            gap: var(--space-4);
+          }
+
+          .subject-details h1 {
+            font-size: var(--text-3xl);
+          }
+
+          .subject-meta {
+            justify-content: center;
+          }
+
+          .content-header {
+            flex-direction: column;
+            text-align: center;
+            gap: var(--space-4);
+          }
+
+          .units-grid {
+            grid-template-columns: 1fr;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .subject-icon-large {
+            font-size: 3rem;
+          }
+
+          .subject-details h1 {
+            font-size: var(--text-2xl);
+          }
+
+          .meta-item {
+            font-size: var(--text-xs);
+          }
+        }
+      `}</style>
     </div>
   );
 };

@@ -2,7 +2,7 @@ import React from 'react';
 import Header from '../components/ui/Header';
 import Footer from '../components/ui/Footer';
 import CourseCard from '../components/ui/CourseCard';
-import { BookOpen, Users, Award, TrendingUp, ArrowRight, Star } from 'lucide-react';
+import { BookOpen, Users, Award, TrendingUp, ArrowRight, Star, Zap, Target, Globe } from 'lucide-react';
 
 const courses = [
   {
@@ -60,10 +60,10 @@ const features = [
 ];
 
 const stats = [
-  { number: '5', label: 'Engineering Branches', suffix: '' },
-  { number: '100', label: 'Subjects Covered', suffix: '+' },
-  { number: '10', label: 'Years Experience', suffix: '+' },
-  { number: '5000', label: 'Students Helped', suffix: '+' }
+  { number: '5', label: 'Engineering Branches', suffix: '', icon: <Target size={24} /> },
+  { number: '100', label: 'Subjects Covered', suffix: '+', icon: <BookOpen size={24} /> },
+  { number: '10', label: 'Years Experience', suffix: '+', icon: <Award size={24} /> },
+  { number: '5000', label: 'Students Helped', suffix: '+', icon: <Users size={24} /> }
 ];
 
 const testimonials = [
@@ -71,19 +71,40 @@ const testimonials = [
     name: 'Priya Sharma',
     role: 'CSE Student',
     content: 'EduZenith has been instrumental in my academic journey. The comprehensive resources and well-structured content helped me excel in my studies.',
-    rating: 5
+    rating: 5,
+    avatar: '👩‍💻'
   },
   {
     name: 'Rahul Kumar',
     role: 'ECE Graduate',
     content: 'The quality of materials and the organized approach to learning made complex topics easy to understand. Highly recommended!',
-    rating: 5
+    rating: 5,
+    avatar: '👨‍🔬'
   },
   {
     name: 'Anita Patel',
     role: 'EEE Student',
     content: 'Amazing platform with excellent study materials. The subject-wise organization makes it easy to find exactly what you need.',
-    rating: 5
+    rating: 5,
+    avatar: '👩‍🎓'
+  }
+];
+
+const highlights = [
+  {
+    icon: <Zap size={24} />,
+    title: 'Interactive Learning',
+    description: 'Engage with dynamic content and interactive materials'
+  },
+  {
+    icon: <Globe size={24} />,
+    title: 'Accessible Anywhere',
+    description: 'Study from anywhere, anytime with our responsive platform'
+  },
+  {
+    icon: <Target size={24} />,
+    title: 'Focused Content',
+    description: 'Curriculum-aligned materials for better exam preparation'
   }
 ];
 
@@ -92,6 +113,25 @@ const Home = () => {
     <div className="home-page">
       <Header />
       
+      {/* Hero Highlights */}
+      <section className="hero-highlights">
+        <div className="container">
+          <div className="highlights-wrapper">
+            {highlights.map((highlight, index) => (
+              <div key={index} className="highlight-item">
+                <div className="highlight-icon">
+                  {highlight.icon}
+                </div>
+                <div className="highlight-content">
+                  <h4>{highlight.title}</h4>
+                  <p>{highlight.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Features Section */}
       <section className="features-section">
         <div className="container">
@@ -119,10 +159,15 @@ const Home = () => {
           <div className="stats-grid">
             {stats.map((stat, index) => (
               <div key={index} className="stat-card">
-                <div className="stat-number">
-                  {stat.number}<span className="stat-suffix">{stat.suffix}</span>
+                <div className="stat-icon">
+                  {stat.icon}
                 </div>
-                <div className="stat-label">{stat.label}</div>
+                <div className="stat-content">
+                  <div className="stat-number">
+                    {stat.number}<span className="stat-suffix">{stat.suffix}</span>
+                  </div>
+                  <div className="stat-label">{stat.label}</div>
+                </div>
               </div>
             ))}
           </div>
@@ -136,10 +181,12 @@ const Home = () => {
             <h2>Explore Our Engineering Disciplines</h2>
             <p>Select a branch to view courses, semesters, and resource materials tailored to your academic and career interests</p>
           </div>
-          <div className="courses-grid">
-            {courses.map((course, index) => (
-              <CourseCard key={course.id} course={course} index={index} />
-            ))}
+          <div className="courses-container">
+            <div className="courses-grid">
+              {courses.map((course, index) => (
+                <CourseCard key={course.id} course={course} index={index} />
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -154,10 +201,15 @@ const Home = () => {
           <div className="testimonials-grid">
             {testimonials.map((testimonial, index) => (
               <div key={index} className="testimonial-card">
-                <div className="testimonial-rating">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} size={16} fill="currentColor" />
-                  ))}
+                <div className="testimonial-header">
+                  <div className="testimonial-avatar">
+                    {testimonial.avatar}
+                  </div>
+                  <div className="testimonial-rating">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star key={i} size={16} fill="currentColor" />
+                    ))}
+                  </div>
                 </div>
                 <p className="testimonial-content">"{testimonial.content}"</p>
                 <div className="testimonial-author">
@@ -217,10 +269,68 @@ const Home = () => {
           line-height: var(--leading-relaxed);
         }
 
+        /* Hero Highlights */
+        .hero-highlights {
+          padding: var(--space-12) 0;
+          background: linear-gradient(135deg, var(--primary-50) 0%, var(--accent-50) 100%);
+          border-bottom: 1px solid var(--secondary-200);
+        }
+
+        .highlights-wrapper {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+          gap: var(--space-6);
+          max-width: 900px;
+          margin: 0 auto;
+        }
+
+        .highlight-item {
+          display: flex;
+          align-items: center;
+          gap: var(--space-4);
+          padding: var(--space-4);
+          background: white;
+          border-radius: var(--radius-xl);
+          box-shadow: var(--shadow-sm);
+          border: 1px solid var(--secondary-200);
+          transition: all var(--transition-normal);
+        }
+
+        .highlight-item:hover {
+          transform: translateY(-2px);
+          box-shadow: var(--shadow-lg);
+        }
+
+        .highlight-icon {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 48px;
+          height: 48px;
+          background: var(--primary-100);
+          color: var(--primary-600);
+          border-radius: var(--radius-xl);
+          flex-shrink: 0;
+        }
+
+        .highlight-content h4 {
+          font-size: var(--text-base);
+          font-weight: 600;
+          color: var(--secondary-900);
+          margin-bottom: var(--space-1);
+        }
+
+        .highlight-content p {
+          font-size: var(--text-sm);
+          color: var(--secondary-600);
+          margin: 0;
+          line-height: var(--leading-relaxed);
+        }
+
         /* Features Section */
         .features-section {
           padding: var(--space-20) 0;
-          background: linear-gradient(135deg, var(--neutral-50) 0%, var(--primary-50) 100%);
+          background: white;
         }
 
         .features-grid {
@@ -259,7 +369,7 @@ const Home = () => {
 
         .feature-card:hover {
           transform: translateY(-4px);
-          box-shadow: var(--shadow-lg);
+          box-shadow: var(--shadow-xl);
         }
 
         .feature-card:hover::before {
@@ -319,13 +429,41 @@ const Home = () => {
         }
 
         .stat-card {
-          text-align: center;
+          display: flex;
+          align-items: center;
+          gap: var(--space-4);
+          padding: var(--space-6);
+          background: rgba(255, 255, 255, 0.1);
+          border-radius: var(--radius-xl);
+          backdrop-filter: blur(10px);
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          transition: all var(--transition-normal);
+        }
+
+        .stat-card:hover {
+          transform: translateY(-2px);
+          background: rgba(255, 255, 255, 0.15);
+        }
+
+        .stat-icon {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 48px;
+          height: 48px;
+          background: rgba(255, 255, 255, 0.2);
+          border-radius: var(--radius-lg);
+          flex-shrink: 0;
+        }
+
+        .stat-content {
+          flex: 1;
         }
 
         .stat-number {
-          font-size: var(--text-5xl);
+          font-size: var(--text-3xl);
           font-weight: 800;
-          margin-bottom: var(--space-2);
+          margin-bottom: var(--space-1);
           background: linear-gradient(45deg, #fbbf24, #f59e0b);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
@@ -333,11 +471,11 @@ const Home = () => {
         }
 
         .stat-suffix {
-          font-size: var(--text-3xl);
+          font-size: var(--text-2xl);
         }
 
         .stat-label {
-          font-size: var(--text-lg);
+          font-size: var(--text-sm);
           font-weight: 500;
           opacity: 0.9;
         }
@@ -345,24 +483,30 @@ const Home = () => {
         /* Courses Section */
         .courses-section {
           padding: var(--space-20) 0;
-          background: white;
+          background: var(--secondary-50);
+        }
+
+        .courses-container {
+          position: relative;
         }
 
         .courses-grid {
           display: grid;
           grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
           gap: var(--space-8);
+          max-width: 1400px;
+          margin: 0 auto;
         }
 
         /* Testimonials Section */
         .testimonials-section {
           padding: var(--space-20) 0;
-          background: var(--secondary-50);
+          background: white;
         }
 
         .testimonials-grid {
           display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+          grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
           gap: var(--space-8);
         }
 
@@ -380,11 +524,21 @@ const Home = () => {
           box-shadow: var(--shadow-lg);
         }
 
+        .testimonial-header {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-bottom: var(--space-4);
+        }
+
+        .testimonial-avatar {
+          font-size: 2rem;
+        }
+
         .testimonial-rating {
           display: flex;
           gap: var(--space-1);
           color: var(--warning-500);
-          margin-bottom: var(--space-4);
         }
 
         .testimonial-content {
@@ -454,9 +608,25 @@ const Home = () => {
           color: var(--primary-600);
         }
 
+        @media (max-width: 1024px) {
+          .courses-grid {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+          }
+        }
+
         @media (max-width: 768px) {
           .section-header h2 {
             font-size: var(--text-2xl);
+          }
+
+          .highlights-wrapper {
+            grid-template-columns: 1fr;
+          }
+
+          .highlight-item {
+            flex-direction: column;
+            text-align: center;
+            gap: var(--space-3);
           }
 
           .features-grid,
@@ -467,7 +637,13 @@ const Home = () => {
 
           .stats-grid {
             grid-template-columns: repeat(2, 1fr);
-            gap: var(--space-6);
+            gap: var(--space-4);
+          }
+
+          .stat-card {
+            flex-direction: column;
+            text-align: center;
+            gap: var(--space-3);
           }
 
           .cta-content h2 {
@@ -488,6 +664,14 @@ const Home = () => {
         @media (max-width: 480px) {
           .stats-grid {
             grid-template-columns: 1fr;
+          }
+
+          .highlight-content h4 {
+            font-size: var(--text-sm);
+          }
+
+          .highlight-content p {
+            font-size: var(--text-xs);
           }
         }
       `}</style>
