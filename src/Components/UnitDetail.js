@@ -66,7 +66,7 @@ const unitPdfs = {
   'Unit 6: Graphs':[],
   'Unit 1: The Multidisciplinary Nature of Environmental Studies and Natural Resources ':['pdf1.pdf', 'pdf2.pdf', 'pdf3.pdf', 'pdf4.pdf'],
   'Unit 2: Ecosystems':['https://storage.googleapis.com/eduzenith/UNIT%20-2%20ES.pdf','https://storage.googleapis.com/eduzenith/Unit%20-%204%20ES.pdf'],
-  'Unit 3: Biodiversity and It\'s Conservation':[\'https://storage.googleapis.com/eduzenith/unit%20-3%20ES.pdf'],
+  'Unit 3: Biodiversity and It\'s Conservation':['https://storage.googleapis.com/eduzenith/unit%20-3%20ES.pdf'],
   'Unit 4: Environmental Pollution':['pdf1.pdf', 'pdf2.pdf', 'pdf3.pdf', 'pdf4.pdf'],
   'Unit 5: Social Issues and the Environment':['pdf1.pdf', 'pdf2.pdf', 'pdf3.pdf', 'pdf4.pdf'],
   'Unit 6: Human Population and the Environment':['pdf1.pdf', 'pdf2.pdf', 'pdf3.pdf', 'pdf4.pdf'],
