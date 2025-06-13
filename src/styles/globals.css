@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap');
+@import './components.css';
+@import './pages.css';
 
 :root {
   /* Light Mode Colors */
@@ -429,6 +431,17 @@ a:hover {
 .btn-secondary:hover:not(:disabled) {
   background-color: var(--bg-hover);
   border-color: var(--border-secondary);
+}
+
+.btn-accent {
+  background-color: var(--accent-600);
+  color: white;
+}
+
+.btn-accent:hover:not(:disabled) {
+  background-color: var(--accent-700);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-hover);
 }
 
 .btn-outline {
