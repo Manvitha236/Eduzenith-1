@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import Header from '../components/ui/Header';
 import Footer from '../components/ui/Footer';
-import { BookOpen, Calendar, Users, Clock, ArrowRight, GraduationCap } from 'lucide-react';
+import { BookOpen, Clock, ArrowRight, GraduationCap } from 'lucide-react';
 
 const CourseDetail = () => {
   const { courseId } = useParams();

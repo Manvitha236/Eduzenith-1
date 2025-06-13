@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from '../components/ui/Header';
 import Footer from '../components/ui/Footer';
-import { Users, Target, Eye, Award, Code, Palette, Mail, Linkedin, Github } from 'lucide-react';
+import { Target, Eye, Award, Mail, Linkedin, Github } from 'lucide-react';
 
 const About = () => {
   const values = [

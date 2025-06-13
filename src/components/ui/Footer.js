@@ -21,13 +21,13 @@ const Footer = () => {
                 and innovative learning experiences across multiple disciplines.
               </p>
               <div className="social-links">
-                <a href="#" className="social-link" aria-label="GitHub">
+                <a href="https://github.com/eduzenith" className="social-link" aria-label="GitHub">
                   <Github size={20} />
                 </a>
-                <a href="#" className="social-link" aria-label="LinkedIn">
+                <a href="https://linkedin.com/company/eduzenith" className="social-link" aria-label="LinkedIn">
                   <Linkedin size={20} />
                 </a>
-                <a href="#" className="social-link" aria-label="Twitter">
+                <a href="https://twitter.com/eduzenith" className="social-link" aria-label="Twitter">
                   <Twitter size={20} />
                 </a>
               </div>
@@ -85,9 +85,9 @@ const Footer = () => {
           <div className="footer-bottom-content">
             <p>&copy; {currentYear} EduZenith. All rights reserved.</p>
             <div className="footer-bottom-links">
-              <a href="#">Privacy Policy</a>
-              <a href="#">Terms of Service</a>
-              <a href="#">Cookie Policy</a>
+              <a href="/privacy">Privacy Policy</a>
+              <a href="/terms">Terms of Service</a>
+              <a href="/cookies">Cookie Policy</a>
             </div>
           </div>
         </div>
