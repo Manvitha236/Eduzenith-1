@@ -582,7 +582,8 @@ const Home = () => {
         .cta-content p {
           font-size: var(--text-lg);
           margin-bottom: var(--space-8);
-          opacity: 0.9;
+          color: white;
+          opacity: 0.95;
           line-height: var(--leading-relaxed);
           text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
         }
