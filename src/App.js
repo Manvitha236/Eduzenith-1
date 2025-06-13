@@ -7,6 +7,7 @@ import SubjectDetail from './Components/Unitlist';
 import UnitDetail from './Components/UnitDetail';
 import About from './Components/About';
 import PDFViewer from './Components/PDFViewer';
+import './styles/globals.css';
 
 const App = () => {
   return (
