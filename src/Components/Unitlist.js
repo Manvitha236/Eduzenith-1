@@ -34,8 +34,6 @@ const subjectDetails = {
   'Software Engineering':['Unit 1: Introduction to Software Enginnering','Unit 2: Software Project management','Unit 3: Software design','Unit 4: Coding','Unit 5: Testing','Unit 6: Software Reliability And Quality Management'],
   'Mathematical Foundations for Data Science':['Unit 1: Basics of Linear Algebra','Unit 2: Matrix Decomposition Algorithms','Unit 3: Dimensions Reduction Algorithms','Unit 4: Calculus','Unit 5: Optimization','Unit 6: Probability'],
 
-  // 'Cryptography and Network Security':['Unit 1: ','Unit 2: ','Unit 3: ','Unit 4: ','Unit 5: ','Unit 6: '],
-
   'Artificial Intelligence':['Unit 1: Introduction to AI Problems','Unit 2: Heuristic Search Techniques','Unit 3: Knowledge Representation','Unit 4: Different Knowledge Representation Schemes','Unit 5: Natural Language Processing','Unit 6: Expert System Architecture'],
 
   'Machine learning':['Unit 1: Introduction to Machine Learning','Unit 2: Neural Networks and Genetic Algorithms','Unit 3: Bayesian learning','Unit 4: Computational Learning','Unit 5: Instance based learning','Unit 6: Advanced learning'],
@@ -44,7 +42,6 @@ const subjectDetails = {
 
   'Career Development Course':['Unit 1: Number system and Sequence & Series','Unit 2: Arithmetic and Algebra','Unit 3: Geometry , Probability & Statistics','Unit 4: Logical Reasoning and Analytical Reasoning','Unit 5:Data Interpretation ','Unit 6: Verbal Ability'],
 
-  // ['Unit 1: ','Unit 2: ','Unit 3: ','Unit 4: ','Unit 5: ','Unit 6: ']
   'Differential Equations and Multivariable calculus':['Unit 1: Differential Equations of First order and First degree','Unit 2: Linear differential equations of higher order','Unit 3: Sequences and Series','Unit 4: Functions of several variables','Unit 5: Applications of Functions of several Variable','Unit 6: Beta and Gamma Function'],
   'Engineering physics':['Unit 1: Introduction to Engineering Physics','Unit 2: Electrostatics -1','Unit 3: Electrostatics -2','Unit 4: Magnetostatics ','Unit 5: : Time varying fields ','Unit 6:: Semiconductor physics'],
   'Engineering Graphic and Design':['Unit 1: Introduction to Engineering Drawing','Unit 2: Orthographic projections','Unit 3: Projection of Solids','Unit 4: Section of solid','Unit 5: Introduction to AutoCAD','Unit 6: Computer Graphics'],
@@ -63,12 +60,11 @@ const subjectDetails = {
   'Basic Electronics':['Unit 1: Introduction to Electronics','Unit 2: Diodes','Unit 3: PN Diode Applications','Unit 4: MOSFETs','Unit 5: BJT Characteristics','Unit 6: Transistor Biasing and Stabilization-BJT'],
   'Network Theory':['Unit 1: Basic concepts of Networks','Unit 2: Transient analysis of First order Circuits','Unit 3: Transient analysis of Second order Circuits','Unit 4: Circuit Analysis Using Laplace Transform','Unit 5: Two Port Network parameters','Unit 6: State Space Models For Electrical Networks'],
 
-  // 'Internet of Things Lab':['Unit 1: Introduction & Overview of Internet of things','Unit 2: Exploring the arduino board and its software ID','Unit 3: Introduction to sensors and displays','Unit 4: Communication','Unit 5: ','Unit 6: ']
   'Analog Electronic Circuits':['Unit 1: MOSFET Biasing and Its Small Signal Analysis','Unit 2: Multi-Stage Amplifiers & Differential Amplifiers of MOSFET','Unit 3: Current mirrors in MOSFETs','Unit 4: CMOScircuits','Unit 5: BJT- Configurations and Multi stage amplifiers','Unit 6: BJT- Differential amplifiers and Current mirrors'],
   'Digital Signal Processing':['Unit 1: Introduction to Digital Signal Processing','Unit 2: Discrete Time Fourier Transform (DTFT)','Unit 3: Discrete Fourier Transform (DFT) and Fast Fourier Transform (FFT)','Unit 4: Z transforms','Unit 5: Filter Concepts','Unit 6: Realization Of Digital Filters'],
   'Digital System Design':['Unit 1: HDL for Digital System Designs','Unit 2: HDL for Digital System Designs','Unit 3: Finite State Machines','Unit 4: HDL for Finite State Machines','Unit 5: Digital Systems modeling','Unit 6: HDL Modeling of USB Protocol Analyzer'],
   'Linear Integrated Circuits':['Unit 1: Feedback Amplifiers','Unit 2: Operational Amplifiers','Unit 3: Wave shaping circuits & Oscillators','Unit 4: DC-DC Converters','Unit 5: PLL','Unit 6: Data Converters'],
-  // ['Unit 1: ','Unit 2: ','Unit 3: ','Unit 4: ','Unit 5: ','Unit 6: ']
+  
   'Electromagnetic waves and Guided media':['Unit 1: Introduction to Electromagnetic waves and Guided media','Unit 2: Wave Propagation','Unit 3: Wave propagation at interfaces','Unit 4: Transmission Lines: Parameters','Unit 5: Waveguides-I','Unit 6: Waveguides-II'],
   'Computer networks':['Unit 1: Data communication Components','Unit 2: LAN','Unit 3: Data Link Layer and Medium Access Sub Layer','Unit 4: Network Layer','Unit 5: Transport Layer','Unit 6: Application Layer']
 };
