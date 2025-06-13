@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, BookOpen, GraduationCap, BarChart3, Home, Info } from 'lucide-react';
+import ThemeToggle from './ThemeToggle';
 
 const courses = [
   { id: 'CSE', name: 'Computer Science Engineering', icon: '💻' },
@@ -79,13 +80,17 @@ const Header = () => {
               <span>EduZenith</span>
             </Link>
 
-            <button 
-              className="nav-toggle"
-              onClick={toggleNav}
-              aria-label="Toggle navigation"
-            >
-              {isNavVisible ? <X size={24} /> : <Menu size={24} />}
-            </button>
+            <div className="nav-actions">
+              <ThemeToggle />
+              
+              <button 
+                className="nav-toggle"
+                onClick={toggleNav}
+                aria-label="Toggle navigation"
+              >
+                {isNavVisible ? <X size={24} /> : <Menu size={24} />}
+              </button>
+            </div>
 
             <div className={`nav-menu ${isNavVisible ? 'active' : ''}`}>
               <Link to="/" className="nav-link">
@@ -137,7 +142,7 @@ const Header = () => {
           align-items: center;
           justify-content: center;
           overflow: hidden;
-          background: linear-gradient(135deg, var(--primary-600) 0%, var(--primary-800) 50%, var(--secondary-900) 100%);
+          background: var(--gradient-primary);
         }
 
         .hero-background {
@@ -150,6 +155,10 @@ const Header = () => {
           position: absolute;
           inset: 0;
           background: linear-gradient(135deg, rgba(59, 130, 246, 0.9) 0%, rgba(30, 64, 175, 0.8) 100%);
+        }
+
+        [data-theme="dark"] .hero-overlay {
+          background: linear-gradient(135deg, rgba(30, 64, 175, 0.9) 0%, rgba(15, 23, 42, 0.8) 100%);
         }
 
         .hero-pattern {
@@ -193,6 +202,10 @@ const Header = () => {
           color: #000000;
         }
 
+        [data-theme="dark"] .welcome-text {
+          color: #ffffff;
+        }
+
         .hero-brand {
           background: linear-gradient(45deg, #fbbf24, #f59e0b);
           -webkit-background-clip: text;
@@ -228,14 +241,14 @@ const Header = () => {
           position: sticky;
           top: 0;
           z-index: var(--z-sticky);
-          background: rgba(255, 255, 255, 0.95);
+          background: var(--bg-secondary);
           backdrop-filter: blur(10px);
-          border-bottom: 1px solid var(--secondary-200);
+          border-bottom: 1px solid var(--border-primary);
           transition: all var(--transition-normal);
         }
 
         .main-nav.scrolled {
-          background: rgba(255, 255, 255, 0.98);
+          background: var(--bg-secondary);
           box-shadow: var(--shadow-lg);
         }
 
@@ -256,19 +269,25 @@ const Header = () => {
           text-decoration: none;
         }
 
+        .nav-actions {
+          display: flex;
+          align-items: center;
+          gap: var(--space-3);
+        }
+
         .nav-toggle {
           display: none;
           background: none;
           border: none;
           cursor: pointer;
-          color: var(--secondary-700);
+          color: var(--text-primary);
           padding: var(--space-2);
           border-radius: var(--radius-md);
           transition: all var(--transition-fast);
         }
 
         .nav-toggle:hover {
-          background-color: var(--secondary-100);
+          background-color: var(--bg-hover);
         }
 
         .nav-menu {
@@ -279,7 +298,7 @@ const Header = () => {
 
         .nav-link {
           font-weight: 500;
-          color: var(--secondary-700);
+          color: var(--text-secondary);
           text-decoration: none;
           padding: var(--space-2) var(--space-3);
           border-radius: var(--radius-md);
@@ -295,6 +314,10 @@ const Header = () => {
           background-color: var(--primary-50);
         }
 
+        [data-theme="dark"] .nav-link:hover {
+          background-color: var(--dark-primary-900);
+        }
+
         .nav-dropdown {
           position: relative;
         }
@@ -308,10 +331,10 @@ const Header = () => {
           top: 100%;
           left: 0;
           min-width: 320px;
-          background: white;
+          background: var(--bg-card);
           border-radius: var(--radius-xl);
           box-shadow: var(--shadow-xl);
-          border: 1px solid var(--secondary-200);
+          border: 1px solid var(--border-primary);
           padding: var(--space-2);
           opacity: 0;
           visibility: hidden;
@@ -333,12 +356,12 @@ const Header = () => {
           padding: var(--space-3);
           border-radius: var(--radius-lg);
           text-decoration: none;
-          color: var(--secondary-700);
+          color: var(--text-primary);
           transition: all var(--transition-fast);
         }
 
         .dropdown-item:hover {
-          background-color: var(--primary-50);
+          background-color: var(--bg-hover);
           color: var(--primary-700);
         }
 
@@ -353,7 +376,7 @@ const Header = () => {
 
         .course-name {
           font-size: var(--text-xs);
-          color: var(--secondary-500);
+          color: var(--text-tertiary);
         }
 
         @media (max-width: 768px) {
@@ -374,8 +397,8 @@ const Header = () => {
             top: 100%;
             left: 0;
             right: 0;
-            background: white;
-            border-top: 1px solid var(--secondary-200);
+            background: var(--bg-card);
+            border-top: 1px solid var(--border-primary);
             box-shadow: var(--shadow-lg);
             flex-direction: column;
             align-items: stretch;
@@ -408,8 +431,12 @@ const Header = () => {
             visibility: visible;
             transform: none;
             box-shadow: none;
-            border: 1px solid var(--secondary-200);
+            border: 1px solid var(--border-primary);
             margin-top: var(--space-2);
+          }
+
+          .nav-actions {
+            order: 2;
           }
         }
       `}</style>

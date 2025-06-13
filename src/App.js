@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { ThemeProvider } from './contexts/ThemeContext';
 import Home from './Components/Home';
 import CourseDetail from './Components/CourseDetail';
 import SubjectList from './Components/SubjectList';
@@ -12,18 +13,20 @@ import './styles/globals.css';
 
 const App = () => {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/course/:courseId" element={<CourseDetail />} />
-        <Route path="/course/:courseId/subjects" element={<SubjectList />} />
-        <Route path="/About" element={<About />} />
-        <Route path="/course/:courseId/subject/:subjectName" element={<SubjectDetail />} />
-        <Route path="/course/:courseId/subject/:subjectName/unit/:unitName" element={<UnitDetail />} />
-        <Route path="/course/:courseId/subject/:subjectName/units" element={<PDFViewer file='d:\CSE (1).pdf' />} />
-      </Routes>
-    </Router>
+    <ThemeProvider>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/course/:courseId" element={<CourseDetail />} />
+          <Route path="/course/:courseId/subjects" element={<SubjectList />} />
+          <Route path="/About" element={<About />} />
+          <Route path="/course/:courseId/subject/:subjectName" element={<SubjectDetail />} />
+          <Route path="/course/:courseId/subject/:subjectName/unit/:unitName" element={<UnitDetail />} />
+          <Route path="/course/:courseId/subject/:subjectName/units" element={<PDFViewer file='d:\CSE (1).pdf' />} />
+        </Routes>
+      </Router>
+    </ThemeProvider>
   );
 };
 
