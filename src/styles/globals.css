@@ -86,54 +86,62 @@
   --neutral-800: #262626;
   --neutral-900: #171717;
 
-  /* Dark Mode Colors */
-  --dark-primary-50: #1e3a8a;
-  --dark-primary-100: #1e40af;
-  --dark-primary-200: #1d4ed8;
-  --dark-primary-300: #2563eb;
-  --dark-primary-400: #3b82f6;
-  --dark-primary-500: #60a5fa;
-  --dark-primary-600: #93c5fd;
-  --dark-primary-700: #bfdbfe;
-  --dark-primary-800: #dbeafe;
-  --dark-primary-900: #eff6ff;
+  /* Enhanced Dark Mode Colors - More Attractive */
+  --dark-bg-primary: #0a0a0b;
+  --dark-bg-secondary: #111113;
+  --dark-bg-tertiary: #1a1a1d;
+  --dark-bg-card: #1e1e21;
+  --dark-bg-hover: #252529;
+  
+  --dark-text-primary: #f8fafc;
+  --dark-text-secondary: #cbd5e1;
+  --dark-text-tertiary: #94a3b8;
+  --dark-text-muted: #64748b;
+  
+  --dark-border-primary: #2d2d32;
+  --dark-border-secondary: #3a3a42;
+  --dark-border-accent: #4c4c57;
+  
+  /* Dark mode primary colors - Vibrant blues */
+  --dark-primary-50: #0f172a;
+  --dark-primary-100: #1e293b;
+  --dark-primary-200: #334155;
+  --dark-primary-300: #475569;
+  --dark-primary-400: #64748b;
+  --dark-primary-500: #3b82f6;
+  --dark-primary-600: #60a5fa;
+  --dark-primary-700: #93c5fd;
+  --dark-primary-800: #bfdbfe;
+  --dark-primary-900: #dbeafe;
 
-  --dark-secondary-50: #0f172a;
-  --dark-secondary-100: #1e293b;
-  --dark-secondary-200: #334155;
-  --dark-secondary-300: #475569;
-  --dark-secondary-400: #64748b;
-  --dark-secondary-500: #94a3b8;
-  --dark-secondary-600: #cbd5e1;
-  --dark-secondary-700: #e2e8f0;
-  --dark-secondary-800: #f1f5f9;
-  --dark-secondary-900: #f8fafc;
+  /* Dark mode accent colors - Purple/Pink */
+  --dark-accent-50: #1a0b1e;
+  --dark-accent-100: #2d1b3d;
+  --dark-accent-200: #4c2a5c;
+  --dark-accent-300: #7c3aed;
+  --dark-accent-400: #8b5cf6;
+  --dark-accent-500: #a78bfa;
+  --dark-accent-600: #c4b5fd;
+  --dark-accent-700: #ddd6fe;
+  --dark-accent-800: #ede9fe;
+  --dark-accent-900: #f5f3ff;
 
-  --dark-accent-50: #701a75;
-  --dark-accent-100: #86198f;
-  --dark-accent-200: #a21caf;
-  --dark-accent-300: #c026d3;
-  --dark-accent-400: #d946ef;
-  --dark-accent-500: #e879f9;
-  --dark-accent-600: #f0abfc;
-  --dark-accent-700: #f8d4fe;
-  --dark-accent-800: #fce7ff;
-  --dark-accent-900: #fef7ff;
+  /* Dark mode success colors - Emerald */
+  --dark-success-50: #064e3b;
+  --dark-success-100: #065f46;
+  --dark-success-200: #047857;
+  --dark-success-300: #059669;
+  --dark-success-400: #10b981;
+  --dark-success-500: #34d399;
+  --dark-success-600: #6ee7b7;
+  --dark-success-700: #9deccc;
+  --dark-success-800: #c6f6d5;
+  --dark-success-900: #d1fae5;
 
-  --dark-success-50: #14532d;
-  --dark-success-100: #166534;
-  --dark-success-200: #15803d;
-  --dark-success-300: #16a34a;
-  --dark-success-400: #22c55e;
-  --dark-success-500: #4ade80;
-  --dark-success-600: #86efac;
-  --dark-success-700: #bbf7d0;
-  --dark-success-800: #dcfce7;
-  --dark-success-900: #f0fdf4;
-
-  --dark-warning-50: #78350f;
-  --dark-warning-100: #92400e;
-  --dark-warning-200: #b45309;
+  /* Dark mode warning colors - Amber */
+  --dark-warning-50: #451a03;
+  --dark-warning-100: #78350f;
+  --dark-warning-200: #92400e;
   --dark-warning-300: #d97706;
   --dark-warning-400: #f59e0b;
   --dark-warning-500: #fbbf24;
@@ -141,28 +149,6 @@
   --dark-warning-700: #fde68a;
   --dark-warning-800: #fef3c7;
   --dark-warning-900: #fffbeb;
-
-  --dark-error-50: #7f1d1d;
-  --dark-error-100: #991b1b;
-  --dark-error-200: #b91c1c;
-  --dark-error-300: #dc2626;
-  --dark-error-400: #ef4444;
-  --dark-error-500: #f87171;
-  --dark-error-600: #fca5a5;
-  --dark-error-700: #fecaca;
-  --dark-error-800: #fee2e2;
-  --dark-error-900: #fef2f2;
-
-  --dark-neutral-50: #171717;
-  --dark-neutral-100: #262626;
-  --dark-neutral-200: #404040;
-  --dark-neutral-300: #525252;
-  --dark-neutral-400: #737373;
-  --dark-neutral-500: #a3a3a3;
-  --dark-neutral-600: #d4d4d4;
-  --dark-neutral-700: #e5e5e5;
-  --dark-neutral-800: #f5f5f5;
-  --dark-neutral-900: #fafafa;
 
   /* Spacing System (8px base) */
   --space-1: 0.25rem;   /* 4px */
@@ -195,12 +181,12 @@
   --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
   --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
 
-  /* Dark mode shadows */
-  --dark-shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
-  --dark-shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.4), 0 2px 4px -2px rgb(0 0 0 / 0.4);
-  --dark-shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.5), 0 4px 6px -4px rgb(0 0 0 / 0.5);
-  --dark-shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.6), 0 8px 10px -6px rgb(0 0 0 / 0.6);
-  --dark-shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.8);
+  /* Enhanced dark mode shadows */
+  --dark-shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.4), 0 1px 2px 0 rgb(0 0 0 / 0.3);
+  --dark-shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.5), 0 2px 4px -2px rgb(0 0 0 / 0.4);
+  --dark-shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.6), 0 4px 6px -4px rgb(0 0 0 / 0.5);
+  --dark-shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.7), 0 8px 10px -6px rgb(0 0 0 / 0.6);
+  --dark-shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.9);
 
   /* Typography */
   --font-family-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -262,33 +248,35 @@
   
   --gradient-primary: linear-gradient(135deg, var(--primary-600) 0%, var(--primary-800) 100%);
   --gradient-secondary: linear-gradient(135deg, var(--secondary-50) 0%, var(--accent-50) 100%);
+  --gradient-hero: linear-gradient(135deg, var(--primary-600) 0%, var(--primary-800) 50%, var(--secondary-900) 100%);
 }
 
-/* Dark Mode Theme Variables */
+/* Enhanced Dark Mode Theme Variables */
 [data-theme="dark"] {
-  --bg-primary: var(--dark-neutral-50);
-  --bg-secondary: var(--dark-neutral-100);
-  --bg-tertiary: var(--dark-neutral-200);
-  --bg-card: var(--dark-neutral-100);
-  --bg-hover: var(--dark-neutral-200);
+  --bg-primary: var(--dark-bg-primary);
+  --bg-secondary: var(--dark-bg-secondary);
+  --bg-tertiary: var(--dark-bg-tertiary);
+  --bg-card: var(--dark-bg-card);
+  --bg-hover: var(--dark-bg-hover);
   
-  --text-primary: var(--dark-secondary-900);
-  --text-secondary: var(--dark-secondary-600);
-  --text-tertiary: var(--dark-secondary-500);
-  --text-inverse: var(--dark-neutral-50);
+  --text-primary: var(--dark-text-primary);
+  --text-secondary: var(--dark-text-secondary);
+  --text-tertiary: var(--dark-text-tertiary);
+  --text-inverse: var(--dark-bg-primary);
   
-  --border-primary: var(--dark-neutral-300);
-  --border-secondary: var(--dark-neutral-400);
+  --border-primary: var(--dark-border-primary);
+  --border-secondary: var(--dark-border-secondary);
   --border-hover: var(--dark-primary-500);
   
   --shadow-color: var(--dark-shadow-sm);
   --shadow-hover: var(--dark-shadow-lg);
   --shadow-focus: var(--dark-shadow-xl);
   
-  --gradient-primary: linear-gradient(135deg, var(--dark-primary-600) 0%, var(--dark-primary-800) 100%);
-  --gradient-secondary: linear-gradient(135deg, var(--dark-neutral-200) 0%, var(--dark-accent-200) 100%);
+  --gradient-primary: linear-gradient(135deg, var(--dark-primary-500) 0%, var(--dark-primary-600) 50%, var(--dark-accent-400) 100%);
+  --gradient-secondary: linear-gradient(135deg, var(--dark-bg-tertiary) 0%, var(--dark-accent-50) 100%);
+  --gradient-hero: linear-gradient(135deg, var(--dark-primary-500) 0%, var(--dark-primary-600) 30%, var(--dark-accent-300) 70%, var(--dark-accent-400) 100%);
   
-  /* Override light mode colors for dark mode */
+  /* Override all color variables for dark mode */
   --primary-50: var(--dark-primary-50);
   --primary-100: var(--dark-primary-100);
   --primary-200: var(--dark-primary-200);
@@ -300,16 +288,16 @@
   --primary-800: var(--dark-primary-800);
   --primary-900: var(--dark-primary-900);
   
-  --secondary-50: var(--dark-secondary-50);
-  --secondary-100: var(--dark-secondary-100);
-  --secondary-200: var(--dark-secondary-200);
-  --secondary-300: var(--dark-secondary-300);
-  --secondary-400: var(--dark-secondary-400);
-  --secondary-500: var(--dark-secondary-500);
-  --secondary-600: var(--dark-secondary-600);
-  --secondary-700: var(--dark-secondary-700);
-  --secondary-800: var(--dark-secondary-800);
-  --secondary-900: var(--dark-secondary-900);
+  --secondary-50: var(--dark-bg-primary);
+  --secondary-100: var(--dark-bg-secondary);
+  --secondary-200: var(--dark-bg-tertiary);
+  --secondary-300: var(--dark-border-primary);
+  --secondary-400: var(--dark-border-secondary);
+  --secondary-500: var(--dark-text-muted);
+  --secondary-600: var(--dark-text-tertiary);
+  --secondary-700: var(--dark-text-secondary);
+  --secondary-800: var(--dark-text-primary);
+  --secondary-900: var(--dark-text-primary);
   
   --accent-50: var(--dark-accent-50);
   --accent-100: var(--dark-accent-100);
@@ -344,27 +332,16 @@
   --warning-800: var(--dark-warning-800);
   --warning-900: var(--dark-warning-900);
   
-  --error-50: var(--dark-error-50);
-  --error-100: var(--dark-error-100);
-  --error-200: var(--dark-error-200);
-  --error-300: var(--dark-error-300);
-  --error-400: var(--dark-error-400);
-  --error-500: var(--dark-error-500);
-  --error-600: var(--dark-error-600);
-  --error-700: var(--dark-error-700);
-  --error-800: var(--dark-error-800);
-  --error-900: var(--dark-error-900);
-  
-  --neutral-50: var(--dark-neutral-50);
-  --neutral-100: var(--dark-neutral-100);
-  --neutral-200: var(--dark-neutral-200);
-  --neutral-300: var(--dark-neutral-300);
-  --neutral-400: var(--dark-neutral-400);
-  --neutral-500: var(--dark-neutral-500);
-  --neutral-600: var(--dark-neutral-600);
-  --neutral-700: var(--dark-neutral-700);
-  --neutral-800: var(--dark-neutral-800);
-  --neutral-900: var(--dark-neutral-900);
+  --neutral-50: var(--dark-bg-primary);
+  --neutral-100: var(--dark-bg-secondary);
+  --neutral-200: var(--dark-bg-tertiary);
+  --neutral-300: var(--dark-border-primary);
+  --neutral-400: var(--dark-border-secondary);
+  --neutral-500: var(--dark-text-muted);
+  --neutral-600: var(--dark-text-tertiary);
+  --neutral-700: var(--dark-text-secondary);
+  --neutral-800: var(--dark-text-primary);
+  --neutral-900: var(--dark-text-primary);
   
   --shadow-sm: var(--dark-shadow-sm);
   --shadow-md: var(--dark-shadow-md);
@@ -634,34 +611,6 @@ a:hover {
   }
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  :root {
-    --text-4xl: 2rem;
-    --text-3xl: 1.5rem;
-    --text-2xl: 1.25rem;
-  }
-  
-  .container {
-    padding: 0 var(--space-4);
-  }
-  
-  h1 { font-size: var(--text-3xl); }
-  h2 { font-size: var(--text-2xl); }
-  h3 { font-size: var(--text-xl); }
-}
-
-@media (max-width: 480px) {
-  .btn {
-    width: 100%;
-    justify-content: center;
-  }
-  
-  .card-body {
-    padding: var(--space-4);
-  }
-}
-
 /* Loading States */
 .loading {
   position: relative;
@@ -737,6 +686,34 @@ html {
   
   .no-print {
     display: none !important;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  :root {
+    --text-4xl: 2rem;
+    --text-3xl: 1.5rem;
+    --text-2xl: 1.25rem;
+  }
+  
+  .container {
+    padding: 0 var(--space-4);
+  }
+  
+  h1 { font-size: var(--text-3xl); }
+  h2 { font-size: var(--text-2xl); }
+  h3 { font-size: var(--text-xl); }
+}
+
+@media (max-width: 480px) {
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .card-body {
+    padding: var(--space-4);
   }
 }
 

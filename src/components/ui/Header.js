@@ -81,8 +81,6 @@ const Header = () => {
             </Link>
 
             <div className="nav-actions">
-              <ThemeToggle />
-              
               <button 
                 className="nav-toggle"
                 onClick={toggleNav}
@@ -129,6 +127,10 @@ const Header = () => {
                 <Info size={16} />
                 About
               </Link>
+
+              <div className="theme-toggle-wrapper">
+                <ThemeToggle />
+              </div>
             </div>
           </div>
         </div>
@@ -142,7 +144,7 @@ const Header = () => {
           align-items: center;
           justify-content: center;
           overflow: hidden;
-          background: var(--gradient-primary);
+          background: var(--gradient-hero);
         }
 
         .hero-background {
@@ -158,7 +160,7 @@ const Header = () => {
         }
 
         [data-theme="dark"] .hero-overlay {
-          background: linear-gradient(135deg, rgba(30, 64, 175, 0.9) 0%, rgba(15, 23, 42, 0.8) 100%);
+          background: linear-gradient(135deg, rgba(59, 130, 246, 0.3) 0%, rgba(124, 58, 237, 0.4) 50%, rgba(168, 85, 247, 0.3) 100%);
         }
 
         .hero-pattern {
@@ -169,6 +171,12 @@ const Header = () => {
             radial-gradient(circle at 75% 75%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
           background-size: 100px 100px;
           animation: float 20s ease-in-out infinite;
+        }
+
+        [data-theme="dark"] .hero-pattern {
+          background-image: 
+            radial-gradient(circle at 25% 25%, rgba(168, 85, 247, 0.2) 0%, transparent 50%),
+            radial-gradient(circle at 75% 75%, rgba(59, 130, 246, 0.15) 0%, transparent 50%);
         }
 
         @keyframes float {
@@ -188,6 +196,7 @@ const Header = () => {
         .hero-icon {
           margin-bottom: var(--space-6);
           opacity: 0.9;
+          filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
         }
 
         .hero-title {
@@ -213,12 +222,20 @@ const Header = () => {
           background-clip: text;
         }
 
+        [data-theme="dark"] .hero-brand {
+          background: linear-gradient(45deg, #fcd34d, #fbbf24);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+        }
+
         .hero-subtitle {
           font-size: clamp(1.125rem, 2.5vw, 1.5rem);
           margin-bottom: var(--space-8);
           opacity: 0.9;
           font-weight: 400;
           line-height: 1.6;
+          text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
         }
 
         .hero-stats {
@@ -235,6 +252,16 @@ const Header = () => {
           font-size: var(--text-sm);
           font-weight: 500;
           opacity: 0.9;
+          padding: var(--space-2) var(--space-4);
+          background: rgba(255, 255, 255, 0.15);
+          border-radius: var(--radius-full);
+          backdrop-filter: blur(10px);
+          border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        [data-theme="dark"] .stat-item {
+          background: rgba(168, 85, 247, 0.2);
+          border: 1px solid rgba(168, 85, 247, 0.3);
         }
 
         .main-nav {
@@ -252,6 +279,16 @@ const Header = () => {
           box-shadow: var(--shadow-lg);
         }
 
+        [data-theme="dark"] .main-nav {
+          background: rgba(17, 17, 19, 0.95);
+          border-bottom: 1px solid var(--dark-border-primary);
+        }
+
+        [data-theme="dark"] .main-nav.scrolled {
+          background: rgba(17, 17, 19, 0.98);
+          box-shadow: var(--dark-shadow-lg);
+        }
+
         .nav-content {
           display: flex;
           align-items: center;
@@ -267,6 +304,10 @@ const Header = () => {
           font-weight: 700;
           color: var(--primary-600);
           text-decoration: none;
+        }
+
+        [data-theme="dark"] .nav-brand {
+          color: var(--dark-primary-600);
         }
 
         .nav-actions {
@@ -315,6 +356,7 @@ const Header = () => {
         }
 
         [data-theme="dark"] .nav-link:hover {
+          color: var(--dark-primary-600);
           background-color: var(--dark-primary-900);
         }
 
@@ -343,6 +385,12 @@ const Header = () => {
           z-index: var(--z-dropdown);
         }
 
+        [data-theme="dark"] .dropdown-menu {
+          background: var(--dark-bg-card);
+          border: 1px solid var(--dark-border-primary);
+          box-shadow: var(--dark-shadow-xl);
+        }
+
         .nav-dropdown:hover .dropdown-menu {
           opacity: 1;
           visibility: visible;
@@ -365,6 +413,11 @@ const Header = () => {
           color: var(--primary-700);
         }
 
+        [data-theme="dark"] .dropdown-item:hover {
+          background-color: var(--dark-bg-hover);
+          color: var(--dark-primary-600);
+        }
+
         .course-icon {
           font-size: var(--text-xl);
         }
@@ -377,6 +430,12 @@ const Header = () => {
         .course-name {
           font-size: var(--text-xs);
           color: var(--text-tertiary);
+        }
+
+        .theme-toggle-wrapper {
+          margin-left: var(--space-4);
+          padding-left: var(--space-4);
+          border-left: 1px solid var(--border-primary);
         }
 
         @media (max-width: 768px) {
@@ -410,6 +469,12 @@ const Header = () => {
             transition: all var(--transition-normal);
           }
 
+          [data-theme="dark"] .nav-menu {
+            background: var(--dark-bg-card);
+            border-top: 1px solid var(--dark-border-primary);
+            box-shadow: var(--dark-shadow-lg);
+          }
+
           .nav-menu.active {
             opacity: 1;
             visibility: visible;
@@ -433,6 +498,16 @@ const Header = () => {
             box-shadow: none;
             border: 1px solid var(--border-primary);
             margin-top: var(--space-2);
+          }
+
+          .theme-toggle-wrapper {
+            margin-left: 0;
+            padding-left: 0;
+            border-left: none;
+            padding-top: var(--space-4);
+            border-top: 1px solid var(--border-primary);
+            display: flex;
+            justify-content: center;
           }
 
           .nav-actions {
