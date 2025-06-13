@@ -186,11 +186,14 @@ const About = () => {
       <style jsx>{`
         .about-page {
           min-height: 100vh;
+          background: var(--bg-primary);
+          color: var(--text-primary);
         }
 
         .about-hero {
           padding: var(--space-20) 0;
-          background: linear-gradient(135deg, var(--primary-50) 0%, var(--secondary-50) 100%);
+          background: var(--gradient-hero);
+          color: white;
         }
 
         .hero-content {
@@ -202,19 +205,17 @@ const About = () => {
         .hero-content h1 {
           font-size: var(--text-5xl);
           font-weight: 800;
-          color: var(--secondary-900);
+          color: white;
           margin-bottom: var(--space-6);
-          background: linear-gradient(135deg, var(--primary-600), var(--accent-600));
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
+          text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
         }
 
         .hero-subtitle {
           font-size: var(--text-xl);
-          color: var(--secondary-600);
+          color: rgba(255, 255, 255, 0.9);
           line-height: var(--leading-relaxed);
           margin: 0;
+          text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
         }
 
         .section-header {
@@ -228,20 +229,20 @@ const About = () => {
         .section-header h2 {
           font-size: var(--text-3xl);
           font-weight: 700;
-          color: var(--secondary-900);
+          color: var(--text-primary);
           margin-bottom: var(--space-4);
         }
 
         .section-header p {
           font-size: var(--text-lg);
-          color: var(--secondary-600);
+          color: var(--text-secondary);
           line-height: var(--leading-relaxed);
         }
 
         /* Values Section */
         .values-section {
           padding: var(--space-20) 0;
-          background: white;
+          background: var(--bg-primary);
         }
 
         .values-grid {
@@ -254,15 +255,16 @@ const About = () => {
           text-align: center;
           padding: var(--space-8);
           border-radius: var(--radius-2xl);
-          background: var(--neutral-50);
-          border: 1px solid var(--secondary-200);
+          background: var(--bg-card);
+          border: 1px solid var(--border-primary);
           transition: all var(--transition-normal);
+          box-shadow: var(--shadow-color);
         }
 
         .value-card:hover {
           transform: translateY(-4px);
-          box-shadow: var(--shadow-lg);
-          background: white;
+          box-shadow: var(--shadow-hover);
+          border-color: var(--border-hover);
         }
 
         .value-icon {
@@ -280,19 +282,19 @@ const About = () => {
         .value-card h3 {
           font-size: var(--text-xl);
           font-weight: 600;
-          color: var(--secondary-900);
+          color: var(--text-primary);
           margin-bottom: var(--space-4);
         }
 
         .value-card p {
-          color: var(--secondary-600);
+          color: var(--text-secondary);
           line-height: var(--leading-relaxed);
         }
 
         /* Offerings Section */
         .offerings-section {
           padding: var(--space-20) 0;
-          background: var(--secondary-50);
+          background: var(--bg-tertiary);
         }
 
         .offerings-grid {
@@ -302,17 +304,18 @@ const About = () => {
         }
 
         .offering-card {
-          background: white;
+          background: var(--bg-card);
           padding: var(--space-6);
           border-radius: var(--radius-xl);
-          box-shadow: var(--shadow-sm);
-          border: 1px solid var(--secondary-200);
+          box-shadow: var(--shadow-color);
+          border: 1px solid var(--border-primary);
           transition: all var(--transition-normal);
         }
 
         .offering-card:hover {
           transform: translateY(-2px);
-          box-shadow: var(--shadow-lg);
+          box-shadow: var(--shadow-hover);
+          border-color: var(--border-hover);
         }
 
         .offering-icon {
@@ -323,19 +326,19 @@ const About = () => {
         .offering-card h3 {
           font-size: var(--text-lg);
           font-weight: 600;
-          color: var(--secondary-900);
+          color: var(--text-primary);
           margin-bottom: var(--space-3);
         }
 
         .offering-card p {
-          color: var(--secondary-600);
+          color: var(--text-secondary);
           line-height: var(--leading-relaxed);
         }
 
         /* Team Section */
         .team-section {
           padding: var(--space-20) 0;
-          background: white;
+          background: var(--bg-primary);
         }
 
         .team-grid {
@@ -345,17 +348,18 @@ const About = () => {
         }
 
         .team-card {
-          background: var(--neutral-50);
+          background: var(--bg-card);
           border-radius: var(--radius-2xl);
           padding: var(--space-8);
-          border: 1px solid var(--secondary-200);
+          border: 1px solid var(--border-primary);
           transition: all var(--transition-normal);
+          box-shadow: var(--shadow-color);
         }
 
         .team-card:hover {
           transform: translateY(-4px);
-          box-shadow: var(--shadow-lg);
-          background: white;
+          box-shadow: var(--shadow-hover);
+          border-color: var(--border-hover);
         }
 
         .team-avatar {
@@ -367,7 +371,7 @@ const About = () => {
         .team-info h3 {
           font-size: var(--text-xl);
           font-weight: 600;
-          color: var(--secondary-900);
+          color: var(--text-primary);
           margin-bottom: var(--space-1);
           text-align: center;
         }
@@ -381,7 +385,7 @@ const About = () => {
         }
 
         .team-description {
-          color: var(--secondary-600);
+          color: var(--text-secondary);
           line-height: var(--leading-relaxed);
           margin-bottom: var(--space-6);
         }
@@ -415,23 +419,25 @@ const About = () => {
           justify-content: center;
           width: 40px;
           height: 40px;
-          background: var(--secondary-200);
-          color: var(--secondary-600);
+          background: var(--bg-hover);
+          color: var(--text-secondary);
           border-radius: var(--radius-lg);
           text-decoration: none;
           transition: all var(--transition-fast);
+          border: 1px solid var(--border-primary);
         }
 
         .social-link:hover {
           background: var(--primary-600);
           color: white;
           transform: translateY(-2px);
+          border-color: var(--primary-600);
         }
 
         /* CTA Section */
         .about-cta {
           padding: var(--space-20) 0;
-          background: linear-gradient(135deg, var(--primary-600) 0%, var(--primary-800) 100%);
+          background: var(--gradient-primary);
           color: white;
         }
 
@@ -446,6 +452,7 @@ const About = () => {
           font-weight: 700;
           margin-bottom: var(--space-4);
           color: white;
+          text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
         }
 
         .cta-content p {
@@ -453,6 +460,7 @@ const About = () => {
           margin-bottom: var(--space-8);
           opacity: 0.9;
           line-height: var(--leading-relaxed);
+          text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
         }
 
         .cta-buttons {

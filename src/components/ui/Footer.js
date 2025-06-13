@@ -95,9 +95,10 @@ const Footer = () => {
 
       <style jsx>{`
         .main-footer {
-          background: linear-gradient(135deg, var(--secondary-900) 0%, var(--secondary-800) 100%);
-          color: white;
+          background: var(--bg-card);
+          color: var(--text-primary);
           margin-top: var(--space-20);
+          border-top: 1px solid var(--border-primary);
         }
 
         .footer-content {
@@ -122,12 +123,12 @@ const Footer = () => {
           gap: var(--space-3);
           font-size: var(--text-2xl);
           font-weight: 700;
-          color: var(--primary-400);
+          color: var(--primary-600);
           margin-bottom: var(--space-2);
         }
 
         .footer-description {
-          color: var(--secondary-300);
+          color: var(--text-secondary);
           line-height: var(--leading-relaxed);
           margin-bottom: var(--space-4);
         }
@@ -143,23 +144,25 @@ const Footer = () => {
           justify-content: center;
           width: 40px;
           height: 40px;
-          background-color: var(--secondary-700);
-          color: var(--secondary-300);
+          background-color: var(--bg-hover);
+          color: var(--text-secondary);
           border-radius: var(--radius-lg);
           text-decoration: none;
           transition: all var(--transition-fast);
+          border: 1px solid var(--border-primary);
         }
 
         .social-link:hover {
           background-color: var(--primary-600);
           color: white;
           transform: translateY(-2px);
+          border-color: var(--primary-600);
         }
 
         .footer-title {
           font-size: var(--text-lg);
           font-weight: 600;
-          color: white;
+          color: var(--text-primary);
           margin-bottom: var(--space-4);
         }
 
@@ -171,14 +174,14 @@ const Footer = () => {
         }
 
         .footer-links a {
-          color: var(--secondary-300);
+          color: var(--text-secondary);
           text-decoration: none;
           transition: color var(--transition-fast);
           padding: var(--space-1) 0;
         }
 
         .footer-links a:hover {
-          color: var(--primary-400);
+          color: var(--primary-600);
         }
 
         .contact-info {
@@ -191,12 +194,13 @@ const Footer = () => {
           display: flex;
           align-items: center;
           gap: var(--space-3);
-          color: var(--secondary-300);
+          color: var(--text-secondary);
         }
 
         .footer-bottom {
-          border-top: 1px solid var(--secondary-700);
+          border-top: 1px solid var(--border-primary);
           padding: var(--space-6) 0;
+          background: var(--bg-tertiary);
         }
 
         .footer-bottom-content {
@@ -208,7 +212,7 @@ const Footer = () => {
         }
 
         .footer-bottom-content p {
-          color: var(--secondary-400);
+          color: var(--text-tertiary);
           margin: 0;
         }
 
@@ -218,14 +222,14 @@ const Footer = () => {
         }
 
         .footer-bottom-links a {
-          color: var(--secondary-400);
+          color: var(--text-tertiary);
           text-decoration: none;
           font-size: var(--text-sm);
           transition: color var(--transition-fast);
         }
 
         .footer-bottom-links a:hover {
-          color: var(--primary-400);
+          color: var(--primary-600);
         }
 
         @media (max-width: 768px) {

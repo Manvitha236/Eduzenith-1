@@ -94,11 +94,11 @@ const CourseCard = ({ course, index }) => {
 
         .course-card-inner {
           height: 100%;
-          background: white;
+          background: var(--bg-card);
           border-radius: var(--radius-2xl);
           padding: var(--space-6);
-          box-shadow: var(--shadow-sm);
-          border: 1px solid var(--secondary-200);
+          box-shadow: var(--shadow-color);
+          border: 1px solid var(--border-primary);
           transition: all var(--transition-normal);
           display: flex;
           flex-direction: column;
@@ -120,8 +120,8 @@ const CourseCard = ({ course, index }) => {
 
         .course-card:hover .course-card-inner {
           transform: translateY(-8px);
-          box-shadow: var(--shadow-2xl);
-          border-color: var(--${color}-200);
+          box-shadow: var(--shadow-hover);
+          border-color: var(--border-hover);
         }
 
         .course-card:hover .course-card-inner::before {
@@ -181,13 +181,13 @@ const CourseCard = ({ course, index }) => {
         .course-title {
           font-size: var(--text-xl);
           font-weight: 700;
-          color: var(--secondary-900);
+          color: var(--text-primary);
           line-height: var(--leading-tight);
           margin: 0;
         }
 
         .course-description {
-          color: var(--secondary-600);
+          color: var(--text-secondary);
           line-height: var(--leading-relaxed);
           flex: 1;
           margin: 0;
@@ -200,16 +200,16 @@ const CourseCard = ({ course, index }) => {
           gap: var(--space-2);
           margin-top: var(--space-2);
           padding: var(--space-3);
-          background: var(--neutral-50);
+          background: var(--bg-tertiary);
           border-radius: var(--radius-lg);
-          border: 1px solid var(--secondary-100);
+          border: 1px solid var(--border-primary);
         }
 
         .stat {
           display: flex;
           align-items: center;
           gap: var(--space-1);
-          color: var(--secondary-600);
+          color: var(--text-secondary);
           font-size: var(--text-xs);
           font-weight: 500;
           justify-content: center;
@@ -222,7 +222,7 @@ const CourseCard = ({ course, index }) => {
           justify-content: space-between;
           margin-top: var(--space-6);
           padding: var(--space-4) 0;
-          border-top: 1px solid var(--secondary-100);
+          border-top: 1px solid var(--border-primary);
         }
 
         .explore-text {
