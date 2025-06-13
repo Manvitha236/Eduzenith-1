@@ -75,7 +75,7 @@ const About = () => {
       <section className="about-hero">
         <div className="container">
           <div className="hero-content">
-            <h1>Welcome to EduZenith</h1>
+            <h1>About EduZenith</h1>
             <p className="hero-subtitle">
               Your ultimate source for innovative and impactful educational content. 
               We believe in empowering students, educators, and lifelong learners to achieve their full potential.
