@@ -345,13 +345,14 @@ const SubjectList = () => {
       <style jsx>{`
         .subject-list-page {
           min-height: 100vh;
-          background: var(--neutral-50);
+          background: var(--bg-primary);
+          color: var(--text-primary);
         }
 
         /* Modern Header */
         .modern-header {
           position: relative;
-          background: linear-gradient(135deg, var(--${course.color}-600) 0%, var(--${course.color}-800) 100%);
+          background: var(--gradient-hero);
           color: white;
           padding: var(--space-12) 0 var(--space-8);
           overflow: hidden;
@@ -414,6 +415,7 @@ const SubjectList = () => {
           font-weight: 800;
           margin-bottom: var(--space-4);
           color: white;
+          text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
         }
 
         .semester-info {
@@ -437,8 +439,8 @@ const SubjectList = () => {
 
         /* Modern Navigation */
         .modern-nav {
-          background: white;
-          border-bottom: 1px solid var(--secondary-200);
+          background: var(--bg-secondary);
+          border-bottom: 1px solid var(--border-primary);
           box-shadow: var(--shadow-sm);
           position: sticky;
           top: 0;
@@ -471,7 +473,7 @@ const SubjectList = () => {
         }
 
         .nav-links a {
-          color: var(--secondary-600);
+          color: var(--text-secondary);
           text-decoration: none;
           font-weight: 500;
           padding: var(--space-2) var(--space-3);
@@ -502,7 +504,7 @@ const SubjectList = () => {
         .hamburger div {
           width: 25px;
           height: 3px;
-          background-color: var(--secondary-600);
+          background-color: var(--text-primary);
           margin: 3px 0;
           transition: 0.3s;
           border-radius: var(--radius-sm);
@@ -523,10 +525,10 @@ const SubjectList = () => {
           gap: var(--space-4);
           margin-bottom: var(--space-8);
           padding: var(--space-6);
-          background: white;
+          background: var(--bg-card);
           border-radius: var(--radius-2xl);
-          box-shadow: var(--shadow-sm);
-          border: 1px solid var(--secondary-200);
+          box-shadow: var(--shadow-color);
+          border: 1px solid var(--border-primary);
         }
 
         .section-icon {
@@ -548,12 +550,12 @@ const SubjectList = () => {
         .section-info h2 {
           font-size: var(--text-2xl);
           font-weight: 700;
-          color: var(--secondary-900);
+          color: var(--text-primary);
           margin-bottom: var(--space-1);
         }
 
         .section-info p {
-          color: var(--secondary-600);
+          color: var(--text-secondary);
           margin: 0;
         }
 
@@ -573,10 +575,10 @@ const SubjectList = () => {
         }
 
         .subject-card {
-          background: white;
+          background: var(--bg-card);
           border-radius: var(--radius-2xl);
-          box-shadow: var(--shadow-sm);
-          border: 1px solid var(--secondary-200);
+          box-shadow: var(--shadow-color);
+          border: 1px solid var(--border-primary);
           transition: all var(--transition-normal);
           overflow: hidden;
           position: relative;
@@ -600,7 +602,7 @@ const SubjectList = () => {
 
         .subject-card:hover {
           transform: translateY(-4px);
-          box-shadow: var(--shadow-xl);
+          box-shadow: var(--shadow-hover);
         }
 
         .subject-card:hover::before {
@@ -612,8 +614,8 @@ const SubjectList = () => {
           align-items: center;
           justify-content: space-between;
           padding: var(--space-4) var(--space-6);
-          background: var(--neutral-50);
-          border-bottom: 1px solid var(--secondary-200);
+          background: var(--bg-tertiary);
+          border-bottom: 1px solid var(--border-primary);
         }
 
         .subject-icon {
@@ -635,7 +637,7 @@ const SubjectList = () => {
         .subject-type {
           font-size: var(--text-xs);
           font-weight: 600;
-          color: var(--secondary-500);
+          color: var(--text-tertiary);
           text-transform: uppercase;
           letter-spacing: 0.5px;
         }
@@ -647,7 +649,7 @@ const SubjectList = () => {
         .card-content h3 {
           font-size: var(--text-lg);
           font-weight: 600;
-          color: var(--secondary-900);
+          color: var(--text-primary);
           line-height: var(--leading-tight);
           margin-bottom: var(--space-4);
         }
@@ -692,11 +694,12 @@ const SubjectList = () => {
 
         /* Footer */
         .modern-footer {
-          background: var(--secondary-900);
-          color: white;
+          background: var(--bg-card);
+          color: var(--text-primary);
           padding: var(--space-8) 0;
           text-align: center;
           margin-top: var(--space-20);
+          border-top: 1px solid var(--border-primary);
         }
 
         /* Responsive Design */
@@ -711,11 +714,11 @@ const SubjectList = () => {
             top: 100%;
             left: 0;
             right: 0;
-            background: white;
+            background: var(--bg-card);
             flex-direction: column;
             padding: var(--space-4);
             box-shadow: var(--shadow-lg);
-            border-top: 1px solid var(--secondary-200);
+            border-top: 1px solid var(--border-primary);
           }
 
           .nav-links.show {

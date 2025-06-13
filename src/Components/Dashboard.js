@@ -366,12 +366,13 @@ const Dashboard = () => {
       <style jsx>{`
         .dashboard-page {
           min-height: 100vh;
-          background: var(--neutral-50);
+          background: var(--bg-primary);
+          color: var(--text-primary);
         }
 
         /* Dashboard Hero */
         .dashboard-hero {
-          background: linear-gradient(135deg, var(--primary-600) 0%, var(--primary-800) 100%);
+          background: var(--gradient-primary);
           color: white;
           padding: var(--space-12) 0 var(--space-8);
         }
@@ -389,12 +390,14 @@ const Dashboard = () => {
           font-weight: 800;
           margin-bottom: var(--space-2);
           color: white;
+          text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
         }
 
         .welcome-section p {
           font-size: var(--text-lg);
           opacity: 0.9;
           margin: 0;
+          text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
         }
 
         .quick-stats {
@@ -417,8 +420,8 @@ const Dashboard = () => {
 
         /* Dashboard Navigation */
         .dashboard-nav {
-          background: white;
-          border-bottom: 1px solid var(--secondary-200);
+          background: var(--bg-secondary);
+          border-bottom: 1px solid var(--border-primary);
           padding: var(--space-4) 0;
           position: sticky;
           top: 0;
@@ -438,19 +441,19 @@ const Dashboard = () => {
           gap: var(--space-2);
           padding: var(--space-3) var(--space-6);
           background: transparent;
-          border: 1px solid var(--secondary-200);
+          border: 1px solid var(--border-primary);
           border-radius: var(--radius-lg);
           font-size: var(--text-sm);
           font-weight: 500;
-          color: var(--secondary-600);
+          color: var(--text-secondary);
           cursor: pointer;
           transition: all var(--transition-fast);
           white-space: nowrap;
         }
 
         .tab-button:hover {
-          background: var(--secondary-50);
-          border-color: var(--secondary-300);
+          background: var(--bg-hover);
+          border-color: var(--border-secondary);
         }
 
         .tab-button.active {
@@ -478,11 +481,11 @@ const Dashboard = () => {
         }
 
         .stat-card {
-          background: white;
+          background: var(--bg-card);
           border-radius: var(--radius-2xl);
           padding: var(--space-6);
-          box-shadow: var(--shadow-sm);
-          border: 1px solid var(--secondary-200);
+          box-shadow: var(--shadow-color);
+          border: 1px solid var(--border-primary);
           transition: all var(--transition-normal);
           position: relative;
           overflow: hidden;
@@ -506,7 +509,7 @@ const Dashboard = () => {
 
         .stat-card:hover {
           transform: translateY(-4px);
-          box-shadow: var(--shadow-xl);
+          box-shadow: var(--shadow-hover);
         }
 
         .stat-card:hover::before {
@@ -575,13 +578,13 @@ const Dashboard = () => {
           display: block;
           font-size: var(--text-3xl);
           font-weight: 800;
-          color: var(--secondary-900);
+          color: var(--text-primary);
           line-height: 1;
         }
 
         .value-label {
           font-size: var(--text-xs);
-          color: var(--secondary-500);
+          color: var(--text-tertiary);
           font-weight: 500;
           text-transform: uppercase;
           letter-spacing: 0.5px;
@@ -590,12 +593,12 @@ const Dashboard = () => {
         .stat-content h3 {
           font-size: var(--text-lg);
           font-weight: 600;
-          color: var(--secondary-900);
+          color: var(--text-primary);
           margin-bottom: var(--space-2);
         }
 
         .stat-content p {
-          color: var(--secondary-600);
+          color: var(--text-secondary);
           font-size: var(--text-sm);
           line-height: var(--leading-relaxed);
           margin: 0;
@@ -609,11 +612,11 @@ const Dashboard = () => {
         }
 
         .dashboard-section {
-          background: white;
+          background: var(--bg-card);
           border-radius: var(--radius-2xl);
           padding: var(--space-6);
-          box-shadow: var(--shadow-sm);
-          border: 1px solid var(--secondary-200);
+          box-shadow: var(--shadow-color);
+          border: 1px solid var(--border-primary);
         }
 
         .section-header {
@@ -622,13 +625,13 @@ const Dashboard = () => {
           justify-content: space-between;
           margin-bottom: var(--space-6);
           padding-bottom: var(--space-4);
-          border-bottom: 1px solid var(--secondary-200);
+          border-bottom: 1px solid var(--border-primary);
         }
 
         .section-header h2 {
           font-size: var(--text-xl);
           font-weight: 700;
-          color: var(--secondary-900);
+          color: var(--text-primary);
           margin: 0;
         }
 
@@ -666,7 +669,7 @@ const Dashboard = () => {
         }
 
         .activity-item:hover {
-          background: var(--neutral-50);
+          background: var(--bg-hover);
         }
 
         .activity-icon {
@@ -712,17 +715,17 @@ const Dashboard = () => {
         .activity-subject {
           font-size: var(--text-sm);
           font-weight: 600;
-          color: var(--secondary-900);
+          color: var(--text-primary);
         }
 
         .activity-action {
           font-size: var(--text-sm);
-          color: var(--secondary-600);
+          color: var(--text-secondary);
         }
 
         .activity-time {
           font-size: var(--text-xs);
-          color: var(--secondary-500);
+          color: var(--text-tertiary);
           margin-top: var(--space-1);
         }
 
@@ -735,7 +738,7 @@ const Dashboard = () => {
 
         .task-item {
           padding: var(--space-4);
-          border: 1px solid var(--secondary-200);
+          border: 1px solid var(--border-primary);
           border-radius: var(--radius-lg);
           transition: all var(--transition-fast);
         }
@@ -748,7 +751,7 @@ const Dashboard = () => {
         .task-content h4 {
           font-size: var(--text-base);
           font-weight: 600;
-          color: var(--secondary-900);
+          color: var(--text-primary);
           margin-bottom: var(--space-2);
         }
 
@@ -770,7 +773,7 @@ const Dashboard = () => {
 
         .task-due {
           font-size: var(--text-xs);
-          color: var(--secondary-600);
+          color: var(--text-secondary);
         }
 
         .task-priority {
@@ -805,7 +808,7 @@ const Dashboard = () => {
         .progress-bar {
           flex: 1;
           height: 6px;
-          background: var(--secondary-200);
+          background: var(--border-primary);
           border-radius: var(--radius-full);
           overflow: hidden;
         }
@@ -820,7 +823,7 @@ const Dashboard = () => {
         .progress-text {
           font-size: var(--text-xs);
           font-weight: 600;
-          color: var(--secondary-600);
+          color: var(--text-secondary);
           min-width: 35px;
         }
 
@@ -832,7 +835,7 @@ const Dashboard = () => {
         .insights-section h2 {
           font-size: var(--text-2xl);
           font-weight: 700;
-          color: var(--secondary-900);
+          color: var(--text-primary);
           margin-bottom: var(--space-6);
           text-align: center;
         }
@@ -844,18 +847,18 @@ const Dashboard = () => {
         }
 
         .insight-card {
-          background: white;
+          background: var(--bg-card);
           border-radius: var(--radius-xl);
           padding: var(--space-6);
-          box-shadow: var(--shadow-sm);
-          border: 1px solid var(--secondary-200);
+          box-shadow: var(--shadow-color);
+          border: 1px solid var(--border-primary);
           text-align: center;
           transition: all var(--transition-normal);
         }
 
         .insight-card:hover {
           transform: translateY(-2px);
-          box-shadow: var(--shadow-lg);
+          box-shadow: var(--shadow-hover);
         }
 
         .insight-icon {
@@ -886,20 +889,20 @@ const Dashboard = () => {
         .insight-content h3 {
           font-size: var(--text-base);
           font-weight: 600;
-          color: var(--secondary-900);
+          color: var(--text-primary);
           margin-bottom: var(--space-2);
         }
 
         .insight-value {
           font-size: var(--text-2xl);
           font-weight: 800;
-          color: var(--secondary-900);
+          color: var(--text-primary);
           margin-bottom: var(--space-2);
         }
 
         .insight-content p {
           font-size: var(--text-sm);
-          color: var(--secondary-600);
+          color: var(--text-secondary);
           margin: 0;
         }
 
@@ -907,20 +910,20 @@ const Dashboard = () => {
         .coming-soon {
           text-align: center;
           padding: var(--space-20) var(--space-8);
-          background: white;
+          background: var(--bg-card);
           border-radius: var(--radius-2xl);
-          box-shadow: var(--shadow-sm);
-          border: 1px solid var(--secondary-200);
+          box-shadow: var(--shadow-color);
+          border: 1px solid var(--border-primary);
         }
 
         .coming-soon h3 {
           font-size: var(--text-xl);
-          color: var(--secondary-900);
+          color: var(--text-primary);
           margin-bottom: var(--space-3);
         }
 
         .coming-soon p {
-          color: var(--secondary-600);
+          color: var(--text-secondary);
           margin: 0;
         }
 

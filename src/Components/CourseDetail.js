@@ -225,11 +225,13 @@ const CourseDetail = () => {
       <style jsx>{`
         .course-detail-page {
           min-height: 100vh;
+          background: var(--bg-primary);
+          color: var(--text-primary);
         }
 
         .course-hero {
           padding: var(--space-20) 0;
-          background: linear-gradient(135deg, var(--${course.color}-600) 0%, var(--${course.color}-800) 100%);
+          background: var(--gradient-hero);
           color: white;
           text-align: center;
         }
@@ -250,6 +252,7 @@ const CourseDetail = () => {
           font-weight: 800;
           margin-bottom: var(--space-6);
           color: white;
+          text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
         }
 
         .course-description {
@@ -257,6 +260,7 @@ const CourseDetail = () => {
           line-height: var(--leading-relaxed);
           margin-bottom: var(--space-8);
           opacity: 0.95;
+          text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
         }
 
         .course-stats {
@@ -272,18 +276,23 @@ const CourseDetail = () => {
           gap: var(--space-2);
           font-size: var(--text-base);
           font-weight: 500;
+          padding: var(--space-2) var(--space-4);
+          background: rgba(255, 255, 255, 0.15);
+          border-radius: var(--radius-full);
+          backdrop-filter: blur(10px);
+          border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .course-highlights {
           padding: var(--space-20) 0;
-          background: white;
+          background: var(--bg-primary);
         }
 
         .course-highlights h2 {
           text-align: center;
           font-size: var(--text-3xl);
           font-weight: 700;
-          color: var(--secondary-900);
+          color: var(--text-primary);
           margin-bottom: var(--space-12);
         }
 
@@ -300,9 +309,17 @@ const CourseDetail = () => {
           align-items: center;
           gap: var(--space-3);
           padding: var(--space-4);
-          background: var(--${course.color}-50);
+          background: var(--bg-card);
           border-radius: var(--radius-lg);
-          border: 1px solid var(--${course.color}-200);
+          border: 1px solid var(--border-primary);
+          box-shadow: var(--shadow-color);
+          transition: all var(--transition-normal);
+        }
+
+        .highlight-item:hover {
+          transform: translateY(-2px);
+          box-shadow: var(--shadow-hover);
+          border-color: var(--border-hover);
         }
 
         .highlight-icon {
@@ -320,7 +337,7 @@ const CourseDetail = () => {
 
         .selection-section {
           padding: var(--space-20) 0;
-          background: var(--secondary-50);
+          background: var(--bg-tertiary);
         }
 
         .selection-content {
@@ -336,13 +353,13 @@ const CourseDetail = () => {
         .selection-header h2 {
           font-size: var(--text-3xl);
           font-weight: 700;
-          color: var(--secondary-900);
+          color: var(--text-primary);
           margin-bottom: var(--space-4);
         }
 
         .selection-header p {
           font-size: var(--text-lg);
-          color: var(--secondary-600);
+          color: var(--text-secondary);
         }
 
         .selection-group {
@@ -352,7 +369,7 @@ const CourseDetail = () => {
         .selection-group h3 {
           font-size: var(--text-2xl);
           font-weight: 600;
-          color: var(--secondary-900);
+          color: var(--text-primary);
           margin-bottom: var(--space-6);
           text-align: center;
         }
@@ -368,26 +385,32 @@ const CourseDetail = () => {
         }
 
         .option-card {
-          background: white;
-          border: 2px solid var(--secondary-200);
+          background: var(--bg-card);
+          border: 2px solid var(--border-primary);
           border-radius: var(--radius-xl);
           padding: var(--space-6);
           cursor: pointer;
           transition: all var(--transition-normal);
           text-align: center;
+          box-shadow: var(--shadow-color);
         }
 
         .option-card:hover {
           border-color: var(--${course.color}-300);
           transform: translateY(-2px);
-          box-shadow: var(--shadow-lg);
+          box-shadow: var(--shadow-hover);
         }
 
         .option-card.selected {
           border-color: var(--${course.color}-600);
           background: var(--${course.color}-50);
           transform: translateY(-2px);
-          box-shadow: var(--shadow-lg);
+          box-shadow: var(--shadow-hover);
+        }
+
+        [data-theme="dark"] .option-card.selected {
+          background: var(--bg-hover);
+          border-color: var(--${course.color}-600);
         }
 
         .option-header {
@@ -414,12 +437,12 @@ const CourseDetail = () => {
         .option-card h4 {
           font-size: var(--text-lg);
           font-weight: 600;
-          color: var(--secondary-900);
+          color: var(--text-primary);
           margin: 0;
         }
 
         .option-card p {
-          color: var(--secondary-600);
+          color: var(--text-secondary);
           font-size: var(--text-sm);
           margin: 0;
         }
@@ -432,14 +455,14 @@ const CourseDetail = () => {
 
         .career-section {
           padding: var(--space-20) 0;
-          background: white;
+          background: var(--bg-primary);
         }
 
         .career-section h2 {
           text-align: center;
           font-size: var(--text-3xl);
           font-weight: 700;
-          color: var(--secondary-900);
+          color: var(--text-primary);
           margin-bottom: var(--space-12);
         }
 
@@ -452,18 +475,19 @@ const CourseDetail = () => {
         }
 
         .career-card {
-          background: var(--neutral-50);
-          border: 1px solid var(--secondary-200);
+          background: var(--bg-card);
+          border: 1px solid var(--border-primary);
           border-radius: var(--radius-xl);
           padding: var(--space-6);
           text-align: center;
           transition: all var(--transition-normal);
+          box-shadow: var(--shadow-color);
         }
 
         .career-card:hover {
           transform: translateY(-2px);
-          box-shadow: var(--shadow-lg);
-          background: white;
+          box-shadow: var(--shadow-hover);
+          border-color: var(--border-hover);
         }
 
         .career-icon {
@@ -474,7 +498,7 @@ const CourseDetail = () => {
         .career-card h4 {
           font-size: var(--text-base);
           font-weight: 600;
-          color: var(--secondary-900);
+          color: var(--text-primary);
           margin: 0;
         }
 
