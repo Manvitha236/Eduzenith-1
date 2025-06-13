@@ -1,32 +1,27 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { ThemeProvider } from './contexts/ThemeContext';
-import Home from './Components/Home';
-import CourseDetail from './Components/CourseDetail';
-import SubjectList from './Components/SubjectList';
-import SubjectDetail from './Components/Unitlist';
-import UnitDetail from './Components/UnitDetail';
-import About from './Components/About';
-import Dashboard from './Components/Dashboard';
-import PDFViewer from './Components/PDFViewer';
+import HomePage from './pages/HomePage';
+import AboutPage from './pages/AboutPage';
+import DashboardPage from './pages/DashboardPage';
+import CourseDetailPage from './pages/CourseDetailPage';
+import SubjectListPage from './pages/SubjectListPage';
+import SubjectDetailPage from './pages/SubjectDetailPage';
+import UnitDetailPage from './pages/UnitDetailPage';
 import './styles/globals.css';
 
 const App = () => {
   return (
-    <ThemeProvider>
-      <Router>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/course/:courseId" element={<CourseDetail />} />
-          <Route path="/course/:courseId/subjects" element={<SubjectList />} />
-          <Route path="/About" element={<About />} />
-          <Route path="/course/:courseId/subject/:subjectName" element={<SubjectDetail />} />
-          <Route path="/course/:courseId/subject/:subjectName/unit/:unitName" element={<UnitDetail />} />
-          <Route path="/course/:courseId/subject/:subjectName/units" element={<PDFViewer file='d:\CSE (1).pdf' />} />
-        </Routes>
-      </Router>
-    </ThemeProvider>
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/dashboard" element={<DashboardPage />} />
+        <Route path="/course/:courseId" element={<CourseDetailPage />} />
+        <Route path="/course/:courseId/subjects" element={<SubjectListPage />} />
+        <Route path="/About" element={<AboutPage />} />
+        <Route path="/course/:courseId/subject/:subjectName" element={<SubjectDetailPage />} />
+        <Route path="/course/:courseId/subject/:subjectName/unit/:unitName" element={<UnitDetailPage />} />
+      </Routes>
+    </Router>
   );
 };
 
