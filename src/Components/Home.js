@@ -2,7 +2,7 @@ import React from 'react';
 import Header from '../components/ui/Header';
 import Footer from '../components/ui/Footer';
 import CourseCard from '../components/ui/CourseCard';
-import { BookOpen, Award, TrendingUp, ArrowRight, Star, Zap, Target, Globe, Users, GraduationCap, BarChart3, Calendar, FileText, Clock } from 'lucide-react';
+import { BookOpen, Award, TrendingUp, ArrowRight, Star, Zap, Target, Globe, Users, GraduationCap } from 'lucide-react';
 
 const courses = [
   {
@@ -102,41 +102,6 @@ const highlights = [
   }
 ];
 
-const dashboardItems = [
-  {
-    icon: <BarChart3 size={24} />,
-    title: 'Progress Analytics',
-    description: 'Track your learning progress across all subjects',
-    color: 'primary',
-    value: '85%',
-    label: 'Completion Rate'
-  },
-  {
-    icon: <Calendar size={24} />,
-    title: 'Study Schedule',
-    description: 'Personalized study plans and reminders',
-    color: 'success',
-    value: '12',
-    label: 'Active Sessions'
-  },
-  {
-    icon: <FileText size={24} />,
-    title: 'Recent Materials',
-    description: 'Quick access to your latest study resources',
-    color: 'warning',
-    value: '24',
-    label: 'New Resources'
-  },
-  {
-    icon: <Clock size={24} />,
-    title: 'Study Time',
-    description: 'Monitor your daily and weekly study hours',
-    color: 'accent',
-    value: '4.5h',
-    label: 'Today'
-  }
-];
-
 const Home = () => {
   return (
     <div className="home-page">
@@ -154,39 +119,6 @@ const Home = () => {
                 <div className="highlight-content">
                   <h4>{highlight.title}</h4>
                   <p>{highlight.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Dashboard Section */}
-      <section className="dashboard-section">
-        <div className="container">
-          <div className="section-header">
-            <h2>Your Learning Dashboard</h2>
-            <p>Get insights into your academic progress and stay on track with your goals</p>
-          </div>
-          <div className="dashboard-grid">
-            {dashboardItems.map((item, index) => (
-              <div key={index} className={`dashboard-card ${item.color}`}>
-                <div className="dashboard-header">
-                  <div className="dashboard-icon">
-                    {item.icon}
-                  </div>
-                  <div className="dashboard-value">
-                    <span className="value">{item.value}</span>
-                    <span className="value-label">{item.label}</span>
-                  </div>
-                </div>
-                <div className="dashboard-content">
-                  <h3>{item.title}</h3>
-                  <p>{item.description}</p>
-                </div>
-                <div className="dashboard-footer">
-                  <span className="view-details">View Details</span>
-                  <ArrowRight size={16} />
                 </div>
               </div>
             ))}
@@ -387,137 +319,6 @@ const Home = () => {
           color: var(--secondary-600);
           margin: 0;
           line-height: var(--leading-relaxed);
-        }
-
-        /* Dashboard Section */
-        .dashboard-section {
-          padding: var(--space-20) 0;
-          background: white;
-        }
-
-        .dashboard-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-          gap: var(--space-6);
-        }
-
-        .dashboard-card {
-          background: white;
-          border-radius: var(--radius-2xl);
-          padding: var(--space-6);
-          box-shadow: var(--shadow-sm);
-          border: 1px solid var(--secondary-200);
-          transition: all var(--transition-normal);
-          position: relative;
-          overflow: hidden;
-          cursor: pointer;
-        }
-
-        .dashboard-card::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          height: 4px;
-          background: var(--primary-500);
-          transform: scaleX(0);
-          transition: transform var(--transition-normal);
-        }
-
-        .dashboard-card.success::before { background: var(--success-500); }
-        .dashboard-card.warning::before { background: var(--warning-500); }
-        .dashboard-card.accent::before { background: var(--accent-500); }
-
-        .dashboard-card:hover {
-          transform: translateY(-4px);
-          box-shadow: var(--shadow-xl);
-        }
-
-        .dashboard-card:hover::before {
-          transform: scaleX(1);
-        }
-
-        .dashboard-header {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          margin-bottom: var(--space-4);
-        }
-
-        .dashboard-icon {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          width: 48px;
-          height: 48px;
-          background: var(--primary-100);
-          color: var(--primary-600);
-          border-radius: var(--radius-xl);
-        }
-
-        .dashboard-card.success .dashboard-icon {
-          background: var(--success-100);
-          color: var(--success-600);
-        }
-
-        .dashboard-card.warning .dashboard-icon {
-          background: var(--warning-100);
-          color: var(--warning-600);
-        }
-
-        .dashboard-card.accent .dashboard-icon {
-          background: var(--accent-100);
-          color: var(--accent-600);
-        }
-
-        .dashboard-value {
-          text-align: right;
-        }
-
-        .value {
-          display: block;
-          font-size: var(--text-2xl);
-          font-weight: 800;
-          color: var(--secondary-900);
-          line-height: 1;
-        }
-
-        .value-label {
-          font-size: var(--text-xs);
-          color: var(--secondary-500);
-          font-weight: 500;
-          text-transform: uppercase;
-          letter-spacing: 0.5px;
-        }
-
-        .dashboard-content h3 {
-          font-size: var(--text-lg);
-          font-weight: 600;
-          color: var(--secondary-900);
-          margin-bottom: var(--space-2);
-        }
-
-        .dashboard-content p {
-          color: var(--secondary-600);
-          font-size: var(--text-sm);
-          line-height: var(--leading-relaxed);
-          margin: 0;
-        }
-
-        .dashboard-footer {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          margin-top: var(--space-4);
-          padding-top: var(--space-4);
-          border-top: 1px solid var(--secondary-100);
-        }
-
-        .view-details {
-          font-size: var(--text-sm);
-          font-weight: 500;
-          color: var(--primary-600);
         }
 
         /* Features Section */
@@ -818,7 +619,6 @@ const Home = () => {
             gap: var(--space-3);
           }
 
-          .dashboard-grid,
           .features-grid,
           .courses-grid,
           .testimonials-grid {
@@ -862,10 +662,6 @@ const Home = () => {
 
           .highlight-content p {
             font-size: var(--text-xs);
-          }
-
-          .dashboard-card {
-            padding: var(--space-4);
           }
         }
       `}</style>

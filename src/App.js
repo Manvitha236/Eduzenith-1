@@ -6,6 +6,7 @@ import SubjectList from './Components/SubjectList';
 import SubjectDetail from './Components/Unitlist';
 import UnitDetail from './Components/UnitDetail';
 import About from './Components/About';
+import Dashboard from './Components/Dashboard';
 import PDFViewer from './Components/PDFViewer';
 import './styles/globals.css';
 
@@ -14,6 +15,7 @@ const App = () => {
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/course/:courseId" element={<CourseDetail />} />
         <Route path="/course/:courseId/subjects" element={<SubjectList />} />
         <Route path="/About" element={<About />} />

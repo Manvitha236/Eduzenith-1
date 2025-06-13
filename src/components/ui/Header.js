@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, BookOpen, GraduationCap } from 'lucide-react';
+import { Menu, X, BookOpen, GraduationCap, BarChart3 } from 'lucide-react';
 
 const courses = [
   { id: 'CSE', name: 'Computer Science Engineering', icon: '💻' },
@@ -85,6 +85,11 @@ const Header = () => {
             <div className={`nav-menu ${isNavVisible ? 'active' : ''}`}>
               <Link to="/" className="nav-link">
                 Home
+              </Link>
+
+              <Link to="/dashboard" className="nav-link">
+                <BarChart3 size={16} />
+                Dashboard
               </Link>
               
               <div className="nav-dropdown">
@@ -268,6 +273,9 @@ const Header = () => {
           border-radius: var(--radius-md);
           transition: all var(--transition-fast);
           position: relative;
+          display: flex;
+          align-items: center;
+          gap: var(--space-2);
         }
 
         .nav-link:hover {
