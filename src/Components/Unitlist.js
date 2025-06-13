@@ -15,9 +15,7 @@ const subjectDetails = {
   'Managerial Economics and Financial Analysis':['Unit 1: Introduction to Managerial Economics and Financial Analysis','Unit 2: Production','Unit 3: Market Structure','Unit 4: Capital and Capital Budgeting','Unit 5: Financial Accounting','Unit 6: Financial Statements'],
   'Object Oriented Programming through JAVA': ['Unit 1: Introduction to java','Unit 2: Strings and Data Structures','Unit 3: Inheritance and Interface','Unit 4: File Handling and Exception Handling','Unit 5: Packages and Multithreading','Unit 6: Event Handling and Swings'],
   'Data Structures':['Unit 1: Linked Lists','Unit 2: Stacks and Queues','Unit 3: Sortings, Searching and Hashing','Unit 4: Trees','Unit 5: Trees and Operations','Unit 6: Graphs'],
-  'Environmental Science': ['Unit 1: The Multidisciplinary Nature of Environmental Studies and Natural Resources ','Unit 2: Ecosystems','Unit 3:  Biodiversity and It\'s Conservation',\'Unit 4: Environmental Pollution',\'Unit 5: Social Issues and the Environment',\'Unit 6: Human Population and the Environment'],
-  ]
-  
+  'Environmental Science': ['Unit 1: The Multidisciplinary Nature of Environmental Studies and Natural Resources ','Unit 2: Ecosystems','Unit 3:  Biodiversity and Its Conservation','Unit 4: Environmental Pollution','Unit 5: Social Issues and the Environment','Unit 6: Human Population and the Environment'],
 
   'Probability and Statistics': ['Unit 1: Probability and theorems in Probability ','Unit 2: Probability Distributions','Unit 3: Moment Generating functions','Unit 4: Order Statistics and Central Limit theorem','Unit 5: Sampling Theory','Unit 6: Large Sample Tests'],
   'Formal Languages and Automata Theory': ['Unit 1: Introduction to Automata','Unit 2: Finite Automata ','Unit 3: Regular Languages ','Unit 4: Grammars ','Unit 5: Push Down Automata','Unit 6: Turing Machine & Computability Theory'],
@@ -30,7 +28,6 @@ const subjectDetails = {
   'Data Science with Python':['Unit 1: Python Basics for Data Science','Unit 2: Working with Data in Python ','Unit 3: Data Processing','Unit 4: Data Analysis','Unit 5:  Data Visualization','Unit 6: Machine Learning using Python'],
   'Compiler Design':['Unit 1: Introduction to Compilers','Unit 2: Syntax Analysis -I','Unit 3: Syntax Analysis -II ','Unit 4: Semantic Analysis','Unit 5: Intermediate Code Generation and Code Optimization','Unit 6: Code generation'],
   'Web Technologies':['Unit 1: Introduction to Web World and JavaScript','Unit 2: PHP basics','Unit 3: Database Connectivity and Authentication','Unit 4: Front-End Web UI Frameworks and Tools and jQuery','Unit 5: Bootstrap','Unit 6: NodeJs'],
-
 
   'Operating System':['Unit 1: Introduction to Operating System','Unit 2: Process Management','Unit 3: Process Synchronization','Unit 4: Deadlocks','Unit 5: Memory Management','Unit 6: File Systems And Secondary Storage Management'],
   'Computer Networks':['Unit 1: Introduction to Computer Networks','Unit 2: The Data Link Layer','Unit 3: The Network Layer','Unit 4: The Transport Layer:','Unit 5: The Application Layer','Unit 6: Network Security'],
@@ -73,7 +70,7 @@ const subjectDetails = {
   'Linear Integrated Circuits':['Unit 1: Feedback Amplifiers','Unit 2: Operational Amplifiers','Unit 3: Wave shaping circuits & Oscillators','Unit 4: DC-DC Converters','Unit 5: PLL','Unit 6: Data Converters'],
   // ['Unit 1: ','Unit 2: ','Unit 3: ','Unit 4: ','Unit 5: ','Unit 6: ']
   'Electromagnetic waves and Guided media':['Unit 1: Introduction to Electromagnetic waves and Guided media','Unit 2: Wave Propagation','Unit 3: Wave propagation at interfaces','Unit 4: Transmission Lines: Parameters','Unit 5: Waveguides-I','Unit 6: Waveguides-II'],
-  'Computer networks':['Unit 1: Data communication Components','Unit 2: LAN','Unit 3: Data Link Layer and Medium Access Sub Layer','Unit 4: Network Layer','Unit 5: Transport Layer','Unit 6: Application Layer'],
+  'Computer networks':['Unit 1: Data communication Components','Unit 2: LAN','Unit 3: Data Link Layer and Medium Access Sub Layer','Unit 4: Network Layer','Unit 5: Transport Layer','Unit 6: Application Layer']
 };
 
 const SubjectDetail = () => {

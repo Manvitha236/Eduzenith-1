@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useLocation, useParams } from 'react-router-dom';
-import { ArrowLeft, BookOpen, FlaskConical, GraduationCap, Clock, Users } from 'lucide-react';
+import { ArrowLeft, BookOpen, FlaskConical, GraduationCap, Users } from 'lucide-react';
 import './styles.css';
 
 const subjects = {
