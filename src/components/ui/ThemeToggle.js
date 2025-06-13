@@ -101,17 +101,17 @@ const ThemeToggle = ({ className = '' }) => {
           --theme-toggle-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
         }
 
-        /* Dark mode styles - Beautiful amber/gold theme */
+        /* Dark mode styles - FIXED VISIBILITY */
         :global([data-theme="dark"]) .theme-toggle {
-          --theme-toggle-bg: rgba(26, 26, 38, 0.8);
-          --theme-toggle-border: rgba(58, 58, 74, 0.6);
+          --theme-toggle-bg: #1a1a26;
+          --theme-toggle-border: #3a3a4a;
           --theme-toggle-hover-border: #fbbf24;
-          --theme-toggle-icon: #cbd5e1;
-          --theme-toggle-text: #cbd5e1;
+          --theme-toggle-icon: #ffffff;
+          --theme-toggle-text: #ffffff;
           --theme-toggle-hover-icon: #fbbf24;
           --theme-toggle-hover-text: #fbbf24;
-          --theme-toggle-gradient: linear-gradient(135deg, rgba(251, 191, 36, 0.2), rgba(245, 158, 11, 0.3));
-          --theme-toggle-shadow: 0 4px 20px rgba(251, 191, 36, 0.4);
+          --theme-toggle-gradient: linear-gradient(135deg, rgba(251, 191, 36, 0.3), rgba(245, 158, 11, 0.4));
+          --theme-toggle-shadow: 0 4px 20px rgba(251, 191, 36, 0.5);
         }
 
         @media (max-width: 768px) {
