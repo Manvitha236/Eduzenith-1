@@ -160,7 +160,7 @@ const Header = () => {
         }
 
         [data-theme="dark"] .hero-overlay {
-          background: linear-gradient(135deg, rgba(59, 130, 246, 0.3) 0%, rgba(124, 58, 237, 0.4) 50%, rgba(168, 85, 247, 0.3) 100%);
+          background: linear-gradient(135deg, rgba(79, 70, 229, 0.4) 0%, rgba(124, 58, 237, 0.5) 50%, rgba(168, 85, 247, 0.4) 100%);
         }
 
         .hero-pattern {
@@ -175,8 +175,8 @@ const Header = () => {
 
         [data-theme="dark"] .hero-pattern {
           background-image: 
-            radial-gradient(circle at 25% 25%, rgba(168, 85, 247, 0.2) 0%, transparent 50%),
-            radial-gradient(circle at 75% 75%, rgba(59, 130, 246, 0.15) 0%, transparent 50%);
+            radial-gradient(circle at 25% 25%, rgba(168, 85, 247, 0.3) 0%, transparent 50%),
+            radial-gradient(circle at 75% 75%, rgba(79, 70, 229, 0.2) 0%, transparent 50%);
         }
 
         @keyframes float {
@@ -280,13 +280,13 @@ const Header = () => {
         }
 
         [data-theme="dark"] .main-nav {
-          background: rgba(17, 17, 19, 0.95);
-          border-bottom: 1px solid var(--dark-border-primary);
+          background: rgba(15, 15, 23, 0.95);
+          border-bottom: 1px solid var(--border-primary);
         }
 
         [data-theme="dark"] .main-nav.scrolled {
-          background: rgba(17, 17, 19, 0.98);
-          box-shadow: var(--dark-shadow-lg);
+          background: rgba(15, 15, 23, 0.98);
+          box-shadow: var(--shadow-lg);
         }
 
         .nav-content {
@@ -307,7 +307,7 @@ const Header = () => {
         }
 
         [data-theme="dark"] .nav-brand {
-          color: var(--dark-primary-600);
+          color: var(--primary-600);
         }
 
         .nav-actions {
@@ -356,8 +356,8 @@ const Header = () => {
         }
 
         [data-theme="dark"] .nav-link:hover {
-          color: var(--dark-primary-600);
-          background-color: var(--dark-primary-900);
+          color: var(--primary-600);
+          background-color: var(--primary-900);
         }
 
         .nav-dropdown {
@@ -386,9 +386,9 @@ const Header = () => {
         }
 
         [data-theme="dark"] .dropdown-menu {
-          background: var(--dark-bg-card);
-          border: 1px solid var(--dark-border-primary);
-          box-shadow: var(--dark-shadow-xl);
+          background: var(--bg-card);
+          border: 1px solid var(--border-primary);
+          box-shadow: var(--shadow-xl);
         }
 
         .nav-dropdown:hover .dropdown-menu {
@@ -414,8 +414,8 @@ const Header = () => {
         }
 
         [data-theme="dark"] .dropdown-item:hover {
-          background-color: var(--dark-bg-hover);
-          color: var(--dark-primary-600);
+          background-color: var(--bg-hover);
+          color: var(--primary-600);
         }
 
         .course-icon {
@@ -470,9 +470,9 @@ const Header = () => {
           }
 
           [data-theme="dark"] .nav-menu {
-            background: var(--dark-bg-card);
-            border-top: 1px solid var(--dark-border-primary);
-            box-shadow: var(--dark-shadow-lg);
+            background: var(--bg-card);
+            border-top: 1px solid var(--border-primary);
+            box-shadow: var(--shadow-lg);
           }
 
           .nav-menu.active {

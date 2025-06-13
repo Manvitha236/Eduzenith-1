@@ -13,16 +13,19 @@ const ThemeToggle = ({ className = '' }) => {
       title={`Switch to ${isDark ? 'light' : 'dark'} mode`}
     >
       <div className="toggle-icon">
-        {isDark ? <Sun size={18} /> : <Moon size={18} />}
+        {isDark ? <Sun size={20} /> : <Moon size={20} />}
       </div>
+      <span className="toggle-text">
+        {isDark ? 'Light' : 'Dark'}
+      </span>
 
       <style jsx>{`
         .theme-toggle {
           display: flex;
           align-items: center;
           justify-content: center;
-          width: 44px;
-          height: 44px;
+          gap: var(--space-2);
+          padding: var(--space-2) var(--space-4);
           background: var(--theme-toggle-bg);
           border: 2px solid var(--theme-toggle-border);
           border-radius: var(--radius-xl);
@@ -30,6 +33,9 @@ const ThemeToggle = ({ className = '' }) => {
           transition: all var(--transition-normal);
           position: relative;
           overflow: hidden;
+          font-size: var(--text-sm);
+          font-weight: 500;
+          min-width: 80px;
         }
 
         .theme-toggle::before {
@@ -66,9 +72,20 @@ const ThemeToggle = ({ className = '' }) => {
           z-index: 1;
         }
 
+        .toggle-text {
+          color: var(--theme-toggle-text);
+          transition: all var(--transition-normal);
+          position: relative;
+          z-index: 1;
+        }
+
         .theme-toggle:hover .toggle-icon {
           color: var(--theme-toggle-hover-icon);
           transform: rotate(15deg) scale(1.1);
+        }
+
+        .theme-toggle:hover .toggle-text {
+          color: var(--theme-toggle-hover-text);
         }
 
         /* Light mode styles */
@@ -77,26 +94,30 @@ const ThemeToggle = ({ className = '' }) => {
           --theme-toggle-border: var(--secondary-200);
           --theme-toggle-hover-border: var(--primary-300);
           --theme-toggle-icon: var(--secondary-600);
+          --theme-toggle-text: var(--secondary-600);
           --theme-toggle-hover-icon: var(--primary-600);
+          --theme-toggle-hover-text: var(--primary-600);
           --theme-toggle-gradient: linear-gradient(135deg, var(--primary-100), var(--accent-100));
           --theme-toggle-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
         }
 
-        /* Dark mode styles */
+        /* Dark mode styles - Beautiful amber/gold theme */
         :global([data-theme="dark"]) .theme-toggle {
-          --theme-toggle-bg: var(--dark-bg-tertiary);
-          --theme-toggle-border: var(--dark-border-secondary);
-          --theme-toggle-hover-border: var(--dark-warning-500);
-          --theme-toggle-icon: var(--dark-text-secondary);
-          --theme-toggle-hover-icon: var(--dark-warning-400);
-          --theme-toggle-gradient: linear-gradient(135deg, var(--dark-warning-900), var(--dark-warning-800));
-          --theme-toggle-shadow: 0 4px 12px rgba(251, 191, 36, 0.4);
+          --theme-toggle-bg: rgba(26, 26, 38, 0.8);
+          --theme-toggle-border: rgba(58, 58, 74, 0.6);
+          --theme-toggle-hover-border: #fbbf24;
+          --theme-toggle-icon: #cbd5e1;
+          --theme-toggle-text: #cbd5e1;
+          --theme-toggle-hover-icon: #fbbf24;
+          --theme-toggle-hover-text: #fbbf24;
+          --theme-toggle-gradient: linear-gradient(135deg, rgba(251, 191, 36, 0.2), rgba(245, 158, 11, 0.3));
+          --theme-toggle-shadow: 0 4px 20px rgba(251, 191, 36, 0.4);
         }
 
         @media (max-width: 768px) {
           .theme-toggle {
-            width: 48px;
-            height: 48px;
+            min-width: 90px;
+            padding: var(--space-3) var(--space-4);
           }
         }
       `}</style>
