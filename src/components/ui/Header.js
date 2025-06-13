@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, BookOpen, GraduationCap, BarChart3 } from 'lucide-react';
+import { Menu, X, BookOpen, GraduationCap, BarChart3, Home, Info } from 'lucide-react';
 
 const courses = [
   { id: 'CSE', name: 'Computer Science Engineering', icon: '💻' },
@@ -84,6 +84,7 @@ const Header = () => {
 
             <div className={`nav-menu ${isNavVisible ? 'active' : ''}`}>
               <Link to="/" className="nav-link">
+                <Home size={16} />
                 Home
               </Link>
 
@@ -94,6 +95,7 @@ const Header = () => {
               
               <div className="nav-dropdown">
                 <span className="nav-link dropdown-trigger">
+                  <GraduationCap size={16} />
                   Courses
                 </span>
                 <div className="dropdown-menu">
@@ -114,6 +116,7 @@ const Header = () => {
               </div>
 
               <Link to="/About" className="nav-link">
+                <Info size={16} />
                 About
               </Link>
             </div>
