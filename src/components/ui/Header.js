@@ -46,7 +46,7 @@ const Header = () => {
               <GraduationCap size={48} />
             </div>
             <h1 className="hero-title">
-              Welcome to <span className="hero-brand">EduZenith</span>
+              <span className="welcome-text">Welcome to</span> <span className="hero-brand">EduZenith</span>
             </h1>
             <p className="hero-subtitle">
               Your gateway to specialized engineering education and resources
@@ -182,6 +182,10 @@ const Header = () => {
           margin-bottom: var(--space-4);
           text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
           line-height: 1.1;
+        }
+
+        .welcome-text {
+          color: #000000;
         }
 
         .hero-brand {
