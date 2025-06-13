@@ -1,5 +1,6 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
+import { ArrowLeft, Download, FileText, ExternalLink, BookOpen, Clock, Target } from 'lucide-react';
 import './styles.css';
 
 const unitPdfs = {
@@ -65,7 +66,7 @@ const unitPdfs = {
   'Unit 6: Graphs':[],
   'Unit 1: The Multidisciplinary Nature of Environmental Studies and Natural Resources ':['pdf1.pdf', 'pdf2.pdf', 'pdf3.pdf', 'pdf4.pdf'],
   'Unit 2: Ecosystems':['https://storage.googleapis.com/eduzenith/UNIT%20-2%20ES.pdf','https://storage.googleapis.com/eduzenith/Unit%20-%204%20ES.pdf'],
-  'Unit 3: Biodiversity and It’s Conservation':['https://storage.googleapis.com/eduzenith/unit%20-3%20ES.pdf'],
+  'Unit 3: Biodiversity and It's Conservation':['https://storage.googleapis.com/eduzenith/unit%20-3%20ES.pdf'],
   'Unit 4: Environmental Pollution':['pdf1.pdf', 'pdf2.pdf', 'pdf3.pdf', 'pdf4.pdf'],
   'Unit 5: Social Issues and the Environment':['pdf1.pdf', 'pdf2.pdf', 'pdf3.pdf', 'pdf4.pdf'],
   'Unit 6: Human Population and the Environment':['pdf1.pdf', 'pdf2.pdf', 'pdf3.pdf', 'pdf4.pdf'],
@@ -303,36 +304,582 @@ const unitPdfs = {
   'Unit 4: Network Layer':['pdf1.pdf', 'pdf2.pdf', 'pdf3.pdf', 'pdf4.pdf'],
   'Unit 5: Transport Layer':['pdf1.pdf', 'pdf2.pdf', 'pdf3.pdf', 'pdf4.pdf'],
   'Unit 6: Application Layer':['pdf1.pdf', 'pdf2.pdf', 'pdf3.pdf', 'pdf4.pdf']
-
 };
 
 const UnitDetail = () => {
-  const { subjectName, unitName } = useParams();
+  const { courseId, subjectName, unitName } = useParams();
   const pdfs = unitPdfs[unitName] || [];
 
+  const getUnitNumber = (unit) => {
+    const match = unit.match(/Unit (\d+):/);
+    return match ? match[1] : '1';
+  };
+
+  const getUnitTitle = (unit) => {
+    return unit.replace(/Unit \d+:\s*/, '');
+  };
+
+  const getFileName = (url) => {
+    if (url.includes('storage.googleapis.com')) {
+      const parts = url.split('/');
+      const fileName = parts[parts.length - 1];
+      return decodeURIComponent(fileName);
+    }
+    return url;
+  };
+
+  const isValidPdf = (pdf) => {
+    return pdf && !pdf.includes('pdf1.pdf') && !pdf.includes('pdf2.pdf') && 
+           !pdf.includes('pdf3.pdf') && !pdf.includes('pdf4.pdf');
+  };
+
+  const validPdfs = pdfs.filter(isValidPdf);
+
   return (
-    <div>
-      <header>
-        <div className="header-content">
-          <h1>{unitName}</h1>
+    <div className="unit-detail-page">
+      {/* Modern Header */}
+      <header className="unit-header">
+        <div className="header-background">
+          <div className="header-overlay"></div>
+        </div>
+        <div className="container">
+          <div className="header-content">
+            <Link to={`/course/${courseId}/subject/${subjectName}`} className="back-button">
+              <ArrowLeft size={20} />
+              <span>Back to Units</span>
+            </Link>
+            
+            <div className="unit-info">
+              <div className="unit-icon-large">
+                📄
+              </div>
+              <div className="unit-details">
+                <div className="unit-number-badge">
+                  Unit {getUnitNumber(unitName)}
+                </div>
+                <h1>{getUnitTitle(unitName)}</h1>
+                <div className="unit-meta">
+                  <div className="meta-item">
+                    <BookOpen size={16} />
+                    <span>Subject: {subjectName}</span>
+                  </div>
+                  <div className="meta-item">
+                    <Target size={16} />
+                    <span>Course: {courseId}</span>
+                  </div>
+                  <div className="meta-item">
+                    <Clock size={16} />
+                    <span>{validPdfs.length} Resources</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </header>
-      <main>
-        <div className="introduction">
-          <h2>{subjectName} - PDFs</h2>
+
+      {/* Navigation Breadcrumb */}
+      <nav className="breadcrumb-nav">
+        <div className="container">
+          <div className="breadcrumb">
+            <Link to="/">Home</Link>
+            <span>/</span>
+            <Link to={`/course/${courseId}`}>{courseId}</Link>
+            <span>/</span>
+            <Link to={`/course/${courseId}/subject/${subjectName}`}>Units</Link>
+            <span>/</span>
+            <span className="current">Resources</span>
+          </div>
         </div>
-        <h3>PDFs</h3>
-        <div className="pdf-list">
-          {pdfs.map((pdf, index) => (
-            <div key={index} className="pdf-item">
-              <a href={`${pdf}`} target="_blank" rel="noopener noreferrer">{pdf}</a>
+      </nav>
+
+      {/* Main Content */}
+      <main className="main-content">
+        <div className="container">
+          <div className="content-header">
+            <div className="content-info">
+              <h2>Study Materials</h2>
+              <p>Download and access comprehensive study materials for this unit</p>
             </div>
-          ))}
+            {validPdfs.length > 0 && (
+              <div className="resources-count">
+                {validPdfs.length} Resource{validPdfs.length !== 1 ? 's' : ''} Available
+              </div>
+            )}
+          </div>
+
+          {validPdfs.length > 0 ? (
+            <div className="resources-grid">
+              {validPdfs.map((pdf, index) => (
+                <div key={index} className="resource-card">
+                  <div className="resource-header">
+                    <div className="resource-icon">
+                      <FileText size={24} />
+                    </div>
+                    <div className="resource-type">PDF Document</div>
+                  </div>
+                  
+                  <div className="resource-content">
+                    <h3>{getFileName(pdf)}</h3>
+                    <div className="resource-meta">
+                      <span className="resource-format">PDF Format</span>
+                      <span className="resource-size">Study Material</span>
+                    </div>
+                  </div>
+                  
+                  <div className="resource-actions">
+                    <a 
+                      href={pdf} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="btn btn-primary"
+                    >
+                      <ExternalLink size={16} />
+                      View Online
+                    </a>
+                    <a 
+                      href={pdf} 
+                      download
+                      className="btn btn-secondary"
+                    >
+                      <Download size={16} />
+                      Download
+                    </a>
+                  </div>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div className="empty-state">
+              <div className="empty-icon">📚</div>
+              <h3>No Resources Available</h3>
+              <p>Study materials for this unit will be available soon. Please check back later or contact your instructor for more information.</p>
+              <div className="empty-actions">
+                <Link 
+                  to={`/course/${courseId}/subject/${subjectName}`}
+                  className="btn btn-primary"
+                >
+                  <ArrowLeft size={16} />
+                  Back to Units
+                </Link>
+              </div>
+            </div>
+          )}
         </div>
       </main>
-      <footer>
-        <p className="fc">&copy; 2024 EduZenith. All rights reserved.</p>
+
+      {/* Footer */}
+      <footer className="modern-footer">
+        <div className="container">
+          <p>&copy; 2024 EduZenith. All rights reserved.</p>
+        </div>
       </footer>
+
+      <style jsx>{`
+        .unit-detail-page {
+          min-height: 100vh;
+          background: var(--neutral-50);
+        }
+
+        /* Unit Header */
+        .unit-header {
+          position: relative;
+          background: linear-gradient(135deg, var(--primary-600) 0%, var(--primary-800) 100%);
+          color: white;
+          padding: var(--space-12) 0 var(--space-8);
+          overflow: hidden;
+        }
+
+        .header-background {
+          position: absolute;
+          inset: 0;
+          background-image: 
+            radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+            radial-gradient(circle at 75% 75%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+          background-size: 100px 100px;
+        }
+
+        .header-overlay {
+          position: absolute;
+          inset: 0;
+          background: rgba(0, 0, 0, 0.1);
+        }
+
+        .header-content {
+          position: relative;
+          z-index: 2;
+        }
+
+        .back-button {
+          display: inline-flex;
+          align-items: center;
+          gap: var(--space-2);
+          color: rgba(255, 255, 255, 0.9);
+          text-decoration: none;
+          font-size: var(--text-sm);
+          margin-bottom: var(--space-6);
+          padding: var(--space-2) var(--space-4);
+          border-radius: var(--radius-lg);
+          background: rgba(255, 255, 255, 0.1);
+          backdrop-filter: blur(10px);
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          transition: all var(--transition-fast);
+        }
+
+        .back-button:hover {
+          background: rgba(255, 255, 255, 0.2);
+          color: white;
+        }
+
+        .unit-info {
+          display: flex;
+          align-items: center;
+          gap: var(--space-6);
+        }
+
+        .unit-icon-large {
+          font-size: 4rem;
+          filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+        }
+
+        .unit-number-badge {
+          display: inline-block;
+          padding: var(--space-1) var(--space-3);
+          background: rgba(255, 255, 255, 0.2);
+          border-radius: var(--radius-full);
+          font-size: var(--text-xs);
+          font-weight: 600;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+          margin-bottom: var(--space-2);
+        }
+
+        .unit-details h1 {
+          font-size: var(--text-4xl);
+          font-weight: 800;
+          margin-bottom: var(--space-4);
+          color: white;
+          line-height: var(--leading-tight);
+        }
+
+        .unit-meta {
+          display: flex;
+          gap: var(--space-4);
+          flex-wrap: wrap;
+        }
+
+        .meta-item {
+          display: flex;
+          align-items: center;
+          gap: var(--space-2);
+          padding: var(--space-2) var(--space-4);
+          background: rgba(255, 255, 255, 0.15);
+          border-radius: var(--radius-full);
+          font-size: var(--text-sm);
+          font-weight: 500;
+          backdrop-filter: blur(10px);
+          border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* Breadcrumb Navigation */
+        .breadcrumb-nav {
+          background: white;
+          border-bottom: 1px solid var(--secondary-200);
+          padding: var(--space-4) 0;
+        }
+
+        .breadcrumb {
+          display: flex;
+          align-items: center;
+          gap: var(--space-2);
+          font-size: var(--text-sm);
+        }
+
+        .breadcrumb a {
+          color: var(--secondary-600);
+          text-decoration: none;
+          transition: color var(--transition-fast);
+        }
+
+        .breadcrumb a:hover {
+          color: var(--primary-600);
+        }
+
+        .breadcrumb span {
+          color: var(--secondary-400);
+        }
+
+        .breadcrumb .current {
+          color: var(--primary-600);
+          font-weight: 500;
+        }
+
+        /* Main Content */
+        .main-content {
+          padding: var(--space-12) 0;
+        }
+
+        .content-header {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-bottom: var(--space-8);
+          padding: var(--space-6);
+          background: white;
+          border-radius: var(--radius-2xl);
+          box-shadow: var(--shadow-sm);
+          border: 1px solid var(--secondary-200);
+        }
+
+        .content-info h2 {
+          font-size: var(--text-2xl);
+          font-weight: 700;
+          color: var(--secondary-900);
+          margin-bottom: var(--space-1);
+        }
+
+        .content-info p {
+          color: var(--secondary-600);
+          margin: 0;
+        }
+
+        .resources-count {
+          padding: var(--space-3) var(--space-6);
+          background: var(--success-100);
+          color: var(--success-700);
+          border-radius: var(--radius-full);
+          font-size: var(--text-sm);
+          font-weight: 600;
+        }
+
+        .resources-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+          gap: var(--space-6);
+        }
+
+        .resource-card {
+          background: white;
+          border-radius: var(--radius-2xl);
+          box-shadow: var(--shadow-sm);
+          border: 1px solid var(--secondary-200);
+          transition: all var(--transition-normal);
+          overflow: hidden;
+          position: relative;
+        }
+
+        .resource-card::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          height: 4px;
+          background: linear-gradient(90deg, var(--success-500), var(--primary-500));
+          transform: scaleX(0);
+          transition: transform var(--transition-normal);
+        }
+
+        .resource-card:hover {
+          transform: translateY(-4px);
+          box-shadow: var(--shadow-xl);
+        }
+
+        .resource-card:hover::before {
+          transform: scaleX(1);
+        }
+
+        .resource-header {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: var(--space-6);
+          background: var(--neutral-50);
+          border-bottom: 1px solid var(--secondary-200);
+        }
+
+        .resource-icon {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 48px;
+          height: 48px;
+          background: var(--success-100);
+          color: var(--success-600);
+          border-radius: var(--radius-xl);
+        }
+
+        .resource-type {
+          font-size: var(--text-xs);
+          font-weight: 600;
+          color: var(--secondary-500);
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+        }
+
+        .resource-content {
+          padding: var(--space-6);
+        }
+
+        .resource-content h3 {
+          font-size: var(--text-lg);
+          font-weight: 600;
+          color: var(--secondary-900);
+          line-height: var(--leading-tight);
+          margin-bottom: var(--space-3);
+          word-break: break-word;
+        }
+
+        .resource-meta {
+          display: flex;
+          gap: var(--space-3);
+          margin-bottom: var(--space-4);
+        }
+
+        .resource-format,
+        .resource-size {
+          font-size: var(--text-xs);
+          padding: var(--space-1) var(--space-2);
+          background: var(--secondary-100);
+          color: var(--secondary-600);
+          border-radius: var(--radius-md);
+          font-weight: 500;
+        }
+
+        .resource-actions {
+          display: flex;
+          gap: var(--space-3);
+          padding: var(--space-6);
+          border-top: 1px solid var(--secondary-200);
+          background: var(--neutral-50);
+        }
+
+        .btn {
+          display: inline-flex;
+          align-items: center;
+          gap: var(--space-2);
+          padding: var(--space-3) var(--space-4);
+          font-size: var(--text-sm);
+          font-weight: 500;
+          border: none;
+          border-radius: var(--radius-lg);
+          text-decoration: none;
+          cursor: pointer;
+          transition: all var(--transition-fast);
+          flex: 1;
+          justify-content: center;
+        }
+
+        .btn-primary {
+          background: var(--primary-600);
+          color: white;
+        }
+
+        .btn-primary:hover {
+          background: var(--primary-700);
+          transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+          background: var(--secondary-100);
+          color: var(--secondary-700);
+          border: 1px solid var(--secondary-200);
+        }
+
+        .btn-secondary:hover {
+          background: var(--secondary-200);
+          border-color: var(--secondary-300);
+        }
+
+        /* Empty State */
+        .empty-state {
+          text-align: center;
+          padding: var(--space-20) var(--space-8);
+          background: white;
+          border-radius: var(--radius-2xl);
+          box-shadow: var(--shadow-sm);
+          border: 1px solid var(--secondary-200);
+        }
+
+        .empty-icon {
+          font-size: 4rem;
+          margin-bottom: var(--space-6);
+          opacity: 0.5;
+        }
+
+        .empty-state h3 {
+          font-size: var(--text-xl);
+          color: var(--secondary-900);
+          margin-bottom: var(--space-3);
+        }
+
+        .empty-state p {
+          color: var(--secondary-600);
+          margin-bottom: var(--space-8);
+          max-width: 500px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        .empty-actions {
+          display: flex;
+          justify-content: center;
+        }
+
+        /* Footer */
+        .modern-footer {
+          background: var(--secondary-900);
+          color: white;
+          padding: var(--space-8) 0;
+          text-align: center;
+          margin-top: var(--space-20);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+          .unit-info {
+            flex-direction: column;
+            text-align: center;
+            gap: var(--space-4);
+          }
+
+          .unit-details h1 {
+            font-size: var(--text-3xl);
+          }
+
+          .unit-meta {
+            justify-content: center;
+          }
+
+          .content-header {
+            flex-direction: column;
+            text-align: center;
+            gap: var(--space-4);
+          }
+
+          .resources-grid {
+            grid-template-columns: 1fr;
+          }
+
+          .resource-actions {
+            flex-direction: column;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .unit-icon-large {
+            font-size: 3rem;
+          }
+
+          .unit-details h1 {
+            font-size: var(--text-2xl);
+          }
+
+          .meta-item {
+            font-size: var(--text-xs);
+          }
+        }
+      `}</style>
     </div>
   );
 };

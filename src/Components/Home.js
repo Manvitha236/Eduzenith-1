@@ -2,7 +2,7 @@ import React from 'react';
 import Header from '../components/ui/Header';
 import Footer from '../components/ui/Footer';
 import CourseCard from '../components/ui/CourseCard';
-import { BookOpen, Users, Award, TrendingUp, ArrowRight, Star, Zap, Target, Globe } from 'lucide-react';
+import { BookOpen, Award, TrendingUp, ArrowRight, Star, Zap, Target, Globe } from 'lucide-react';
 
 const courses = [
   {
@@ -40,12 +40,6 @@ const features = [
     color: 'primary'
   },
   {
-    icon: <Users size={32} />,
-    title: 'Expert Faculty',
-    description: 'Learn from experienced professors and industry experts with years of teaching experience.',
-    color: 'accent'
-  },
-  {
     icon: <Award size={32} />,
     title: 'Quality Education',
     description: 'Get access to high-quality educational content that meets industry standards and academic requirements.',
@@ -63,7 +57,7 @@ const stats = [
   { number: '5', label: 'Engineering Branches', suffix: '', icon: <Target size={24} /> },
   { number: '100', label: 'Subjects Covered', suffix: '+', icon: <BookOpen size={24} /> },
   { number: '10', label: 'Years Experience', suffix: '+', icon: <Award size={24} /> },
-  { number: '5000', label: 'Students Helped', suffix: '+', icon: <Users size={24} /> }
+  { number: '5000', label: 'Students Helped', suffix: '+', icon: <Target size={24} /> }
 ];
 
 const testimonials = [
@@ -363,7 +357,6 @@ const Home = () => {
           transition: transform var(--transition-normal);
         }
 
-        .feature-card.accent::before { background: var(--accent-500); }
         .feature-card.success::before { background: var(--success-500); }
         .feature-card.warning::before { background: var(--warning-500); }
 
@@ -386,11 +379,6 @@ const Home = () => {
           margin-bottom: var(--space-6);
           background: var(--primary-100);
           color: var(--primary-600);
-        }
-
-        .feature-card.accent .feature-icon {
-          background: var(--accent-100);
-          color: var(--accent-600);
         }
 
         .feature-card.success .feature-icon {

@@ -34,11 +34,6 @@ const About = () => {
       icon: '👨‍🏫'
     },
     {
-      title: 'Community Engagement',
-      description: 'We believe learning is a collaborative process. Our platform encourages interaction among users to share insights, solve problems, and build a supportive learning community.',
-      icon: '🤝'
-    },
-    {
       title: 'Customized Learning Experiences',
       description: 'With advanced tools and features, users can customize their learning experiences to match their personal learning style and pace.',
       icon: '🎯'
@@ -80,7 +75,7 @@ const About = () => {
       <section className="about-hero">
         <div className="container">
           <div className="hero-content">
-            <h1>About EduZenith</h1>
+            <h1>Welcome to EduZenith</h1>
             <p className="hero-subtitle">
               Your ultimate source for innovative and impactful educational content. 
               We believe in empowering students, educators, and lifelong learners to achieve their full potential.
