@@ -164,9 +164,10 @@
   --bg-card: white;
   --bg-hover: var(--secondary-50);
   
-  --text-primary: var(--secondary-900);
-  --text-secondary: var(--secondary-600);
-  --text-tertiary: var(--secondary-500);
+  /* IMPROVED TEXT CONTRAST FOR LIGHT MODE */
+  --text-primary: #1a1a1a;
+  --text-secondary: #4a4a4a;
+  --text-tertiary: #6b6b6b;
   --text-inverse: white;
   
   --border-primary: var(--secondary-200);
@@ -191,10 +192,10 @@
   --bg-card: #1a1a26;
   --bg-hover: #1f1f2e;
   
-  /* Perfect White Text for Dark Mode */
+  /* PERFECT WHITE TEXT FOR DARK MODE - MAXIMUM CONTRAST */
   --text-primary: #ffffff;
-  --text-secondary: #e2e8f0;
-  --text-tertiary: #cbd5e1;
+  --text-secondary: #e5e5e5;
+  --text-tertiary: #cccccc;
   --text-inverse: #0a0a0f;
   
   /* Elegant Borders */
@@ -323,7 +324,7 @@ body {
   transition: background-color var(--transition-normal), color var(--transition-normal);
 }
 
-/* Typography */
+/* Typography - IMPROVED CONTRAST */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-family-secondary);
   font-weight: 600;
@@ -332,17 +333,18 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: var(--space-4);
 }
 
-h1 { font-size: var(--text-4xl); }
-h2 { font-size: var(--text-3xl); }
-h3 { font-size: var(--text-2xl); }
-h4 { font-size: var(--text-xl); }
-h5 { font-size: var(--text-lg); }
-h6 { font-size: var(--text-base); }
+h1 { font-size: var(--text-4xl); font-weight: 800; }
+h2 { font-size: var(--text-3xl); font-weight: 700; }
+h3 { font-size: var(--text-2xl); font-weight: 600; }
+h4 { font-size: var(--text-xl); font-weight: 600; }
+h5 { font-size: var(--text-lg); font-weight: 600; }
+h6 { font-size: var(--text-base); font-weight: 600; }
 
 p {
   margin-bottom: var(--space-4);
   line-height: var(--leading-relaxed);
   color: var(--text-secondary);
+  font-size: var(--text-base);
 }
 
 a {
@@ -387,7 +389,7 @@ a:hover {
 .bg-warning { background-color: var(--warning-600); }
 .bg-error { background-color: var(--error-600); }
 
-/* Button Styles */
+/* Button Styles - IMPROVED CONTRAST */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -396,7 +398,7 @@ a:hover {
   padding: var(--space-3) var(--space-6);
   font-family: var(--font-family-primary);
   font-size: var(--text-sm);
-  font-weight: 500;
+  font-weight: 600;
   line-height: 1;
   border: none;
   border-radius: var(--radius-lg);
@@ -497,7 +499,7 @@ a:hover {
   background-color: var(--bg-tertiary);
 }
 
-/* Form Styles */
+/* Form Styles - IMPROVED CONTRAST */
 .form-group {
   margin-bottom: var(--space-6);
 }
@@ -505,7 +507,7 @@ a:hover {
 .form-label {
   display: block;
   font-size: var(--text-sm);
-  font-weight: 500;
+  font-weight: 600;
   color: var(--text-primary);
   margin-bottom: var(--space-2);
 }
@@ -527,6 +529,32 @@ a:hover {
   outline: none;
   border-color: var(--primary-500);
   box-shadow: 0 0 0 3px var(--primary-100);
+}
+
+/* Section Headers - IMPROVED CONTRAST */
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  margin-bottom: var(--space-8);
+  padding: var(--space-6);
+  background: var(--bg-card);
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-color);
+  border: 1px solid var(--border-primary);
+}
+
+.section-header h2 {
+  font-size: var(--text-3xl);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: var(--space-4);
+}
+
+.section-header p {
+  font-size: var(--text-lg);
+  color: var(--text-secondary);
+  line-height: var(--leading-relaxed);
 }
 
 /* Animation Classes */
