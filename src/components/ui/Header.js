@@ -15,6 +15,9 @@ const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
 
+  // Check if we're on the home page
+  const isHomePage = location.pathname === '/';
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
@@ -34,36 +37,38 @@ const Header = () => {
 
   return (
     <>
-      {/* Hero Header */}
-      <header className="hero-header">
-        <div className="hero-background">
-          <div className="hero-overlay"></div>
-          <div className="hero-pattern"></div>
-        </div>
-        <div className="container">
-          <div className="hero-content">
-            <div className="hero-icon">
-              <GraduationCap size={48} />
-            </div>
-            <h1 className="hero-title">
-              <span className="welcome-text">Welcome to</span> <span className="hero-brand">EduZenith</span>
-            </h1>
-            <p className="hero-subtitle">
-              Your gateway to specialized engineering education and resources
-            </p>
-            <div className="hero-stats">
-              <div className="stat-item">
-                <BookOpen size={20} />
-                <span>5 Branches</span>
+      {/* Hero Header - Only show on Home page */}
+      {isHomePage && (
+        <header className="hero-header">
+          <div className="hero-background">
+            <div className="hero-overlay"></div>
+            <div className="hero-pattern"></div>
+          </div>
+          <div className="container">
+            <div className="hero-content">
+              <div className="hero-icon">
+                <GraduationCap size={48} />
               </div>
-              <div className="stat-item">
-                <GraduationCap size={20} />
-                <span>100+ Subjects</span>
+              <h1 className="hero-title">
+                <span className="welcome-text">Welcome to</span> <span className="hero-brand">EduZenith</span>
+              </h1>
+              <p className="hero-subtitle">
+                Your gateway to specialized engineering education and resources
+              </p>
+              <div className="hero-stats">
+                <div className="stat-item">
+                  <BookOpen size={20} />
+                  <span>5 Branches</span>
+                </div>
+                <div className="stat-item">
+                  <GraduationCap size={20} />
+                  <span>100+ Subjects</span>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </header>
+        </header>
+      )}
 
       {/* Navigation */}
       <nav className={`main-nav ${isScrolled ? 'scrolled' : ''}`}>
